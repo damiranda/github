@@ -1,0 +1,315 @@
+---
+title: "RSiena Workshop"
+author: "Daniel Miranda"
+date: "17 de diciembre de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RSiena Workshop
+
+```{r }
+setwd("C:/Users/DANIEL/Dropbox (Personal)/Workshops/RSiena")
+#install.packages("RSiena", repos = "http://R−Forge.R−project.org")
+#install.packages("RSienaTest", repos = "http://R−Forge.R−project.org")
+#pacman::p_load(RSiena, igraph, BiRewire, network, sna)
+
+
+friend.data.w1 <- as.matrix(read.table("s50-network1.dat"))
+friend.data.w2 <- as.matrix(read.table("s50-network2.dat"))
+friend.data.w3 <- as.matrix(read.table("s50-network3.dat"))
+drink <- as.matrix(read.table("s50-alcohol.dat"))
+smoke <- as.matrix(read.table("s50-smoke.dat"))
+```
+
+
+```{r models}
+library(RSiena)
+
+#?s50
+head(s501)
+tail(s501)
+drink
+smoke
+#?sienaDependent
+
+##DEFINIR VARIABLE DEPENDIENTE
+friendshipData <- array(c(friend.data.w1,
+                          friend.data.w2,
+                          friend.data.w3),
+                        dim = c( 50, 50, 3))
+friendship <- sienaDependent(friendshipData)
+
+##DEFINIR COVARIABLES
+smoke1 <- coCovar(smoke[ , 1])
+alcohol <- varCovar(drink)
+mydata <- sienaDataCreate(friendship, smoke1, alcohol)
+print01Report(mydata, modelname="s50")
+mydata
+
+
+
+myeff <- getEffects(mydata)
+effectsDocumentation(myeff)
+
+# transitividad de tripletas (transTrip) y ciclo de 3 (cycle3)
+myeff <- includeEffects( myeff, transTrip, cycle3)
+
+# Efectos covariantes: covariante de ego (egoX), covariante de alter (altX) y similaridad de ego y alter (simX)
+myeff <- includeEffects( myeff, egoX, altX, simX, interaction1 = "alcohol" )
+myeff <- includeEffects( myeff, simX, interaction1 = "smoke1" )
+myeff
+
+myalgorithm <- sienaAlgorithmCreate( projname = 's50' )
+ans <- siena07( myalgorithm, data = mydata, effects = myeff)
+ans
+
+ans <- siena07( myalgorithm, data = mydata, effects = myeff, prevAns=ans)
+ans
+summary(ans)
+
+
+(myeff <- includeEffects( myeff, transRecTrip))
+(ans1 <- siena07( myalgorithm, data = mydata, effects = myeff, prevAns=ans))
+
+# Si es necesario, repetir la estimaci´on con los nuevos resultados:
+(ans1 <- siena07( myalgorithm, data = mydata, effects = myeff, prevAns=ans1))
+# Si la tasa de convergencia m´axima no es menor a £0.25£, seguir estimando.
+```
+
+
+
+```{r sesion}
+### LEER LOS DOCUMENTOS DESDE EL DIRECTORIO DE TRABAJO:
+
+library(igraph)
+t1amigos <- read.csv2("amigos1.csv")
+t1amigos <- graph.data.frame(t1amigos)
+
+
+t2amigos <- read.csv2("amigos2.csv")
+t2amigos <- graph.data.frame(t2amigos)
+
+vertex <- read.csv2("vertex.csv")
+
+# ---------------------------------------------------------------------- #
+### Qué tan estable es la red? Es suficientemente estable?
+library(BiRewire)
+birewire.similarity(t1amigos, t2amigos)
+
+# ---------------------------------------------------------------------- #
+### PREPARANDO VISUALIZACION DE LA RED
+t1amigos <- get.adjacency(t1amigos, sparse = F) # order
+t1amigos <- t1amigos[order(as.numeric(colnames(t1amigos))), order(as.numeric(rownames(t1amigos)))]
+graph1 <- graph.adjacency(t1amigos)
+
+
+t2amigos <- get.adjacency(t2amigos, sparse = F)
+t2amigos <- t2amigos[order(as.numeric(colnames(t2amigos))), order(as.numeric(rownames(t2amigos)))]
+graph2 <- graph.adjacency(t2amigos)
+
+set.seed(1)
+layg1 <- layout.fruchterman.reingold(graph1)
+
+set.seed(2)
+layg2 <- layout.fruchterman.reingold(graph2)
+
+layg2[which(V(graph2)$name %in% V(graph1)$name), ] <- 
+  layg1[which(V(graph1)$name %in% V(graph2)$name),]
+
+xlim <- range(c(layg1[,1], layg2[,1]))
+ylim <- range(c(layg1[,2], layg2[,2]))
+
+V(graph1)$gender <- as.numeric(vertex$genero)
+V(graph2)$gender <- as.numeric(vertex$genero)
+
+# ---------------------------------------------------------------------- #
+### NOTAN ALGO EXTRAÑO EN LA INSPECCION VISUAL?
+## VISUALIZACION 1
+par(mfrow = c(1, 2))
+plot(graph1,
+     vertex.color = ifelse(V(graph1)$gender == 1, "pink", "darkblue"),
+     vertex.shape = ifelse(V(graph1)$gender == 1, "square", "circle"),
+     edge.color = "black",
+     edge.width = 2,
+     edge.arrow.size = 0.2,
+     vertex.size = 10,
+     vertex.label = NA,
+     layout=layg1, 
+     main = "Red ola 1")
+plot(graph2,
+     vertex.color = ifelse(V(graph2)$gender == 1, "pink", "darkblue"),
+     vertex.shape = ifelse(V(graph2)$gender == 1, "square", "circle"),
+     edge.color = "black",
+     edge.width = 2,
+     edge.arrow.size = 0.2,
+     vertex.size = 10,
+     vertex.label = "",
+     layout=layg2, 
+     main = "Red ola 2")
+par(mfrow = c(1, 1))
+
+## VISUALIZACION 2
+par(mfrow = c(1, 2))
+plot(graph1,
+     vertex.color = vertex$posicion,
+     vertex.shape = ifelse(V(graph1)$gender == 1, "square", "circle"),
+     edge.color = "black",
+     edge.width = 2,
+     edge.arrow.size = 0.2,
+     vertex.size = 10,
+     vertex.label = NA,
+     layout=layg1, 
+     main = "Red ola 1")
+plot(graph2,
+     vertex.color = vertex$posicion,
+     vertex.shape = ifelse(V(graph2)$gender == 1, "square", "circle"),
+     edge.color = "black",
+     edge.width = 2,
+     edge.arrow.size = 0.2,
+     vertex.size = 10,
+     vertex.label = "",
+     layout=layg2, 
+     main = "Red ola 2")
+par(mfrow = c(1, 1))
+
+# ---------------------------------------------------------------------- #
+### RED DEPENDIENTE
+amigosData <- array( c(t1amigos, t2amigos), 
+                     dim = c( 26, 26, 2) )
+amig <- sienaDependent(amigosData)
+
+# ---------------------------------------------------------------------- #
+### COVARIANTES
+# Genero
+gender <- as.numeric(vertex$genero) # 1= FEMENINO; 2=MASCULINO
+gender <- coCovar(gender)
+
+# Edad
+age <- as.numeric(vertex$edad)
+age <- coCovar(age)
+
+# Utilizando una escala de 1 a 10, donde 1 representa más de "izquierda" y 10 
+# más de "derecha", ¿en qué posición política se ubicaría Ud.?
+ideology <- as.numeric(vertex$posicion)
+ideology <- coCovar(ideology)
+
+# ---------------------------------------------------------------------- #
+### COMBINAR DATOS PARA EL ANALISIS
+educaData <- sienaDataCreate(amig, gender, age,ideology)
+
+# ---------------------------------------------------------------------- #
+### EFECTOS DE LA RED
+educaEffects <- getEffects(educaData)
+#effectsDocumentation(educaEffects)
+print01Report(educaData, modelname="educa_amig")
+
+educaEffects <- includeEffects(educaEffects,
+                               inPop,
+                               outAct,
+                               transTrip,
+                               transRecTrip,
+                               name="amig")
+
+educaEffects <- includeEffects(educaEffects, altX, egoX, 
+                               sameX,
+                               name="amig",
+                               interaction1="gender")
+educaEffects <- includeEffects(educaEffects, altX, egoX, 
+                               simX,
+                               name="amig",
+                               interaction1="ideology")
+educaEffects
+
+
+# ---------------------------------------------------------------------- #
+### CREAR EL ALGORITMO Y ESTIMAR
+## OJO: necesitamos returnDeps para poder estimar GOF
+educaModel <- sienaAlgorithmCreate(projname='educa_model', seed=0)
+(educaResults <- siena07(educaModel, data=educaData, 
+                         effects=educaEffects,
+                         returnDeps=TRUE)) 
+siena.table(educaResults, type="html", sig = T)
+
+## Converge? Volver a estimar si es necesario...
+(educaResults1a <- siena07(educaModel, data=educaData, prevAns=educaResults,
+                           effects=educaEffects, 
+                           returnDeps=TRUE))
+siena.table(educaResults1a, type="html", sig = T)
+
+# ---------------------------------------------------------------------- #
+### ESTIMACION DE GOF 
+## Outdegree
+gof_out <- sienaGOF(educaResults, verbose=TRUE,
+                    OutdegreeDistribution, join=TRUE,
+                    varName="amig")
+gof_out
+plot(gof_out)
+
+## Indegree
+gof_in <- sienaGOF(educaResults, verbose=TRUE,
+                   IndegreeDistribution, join=TRUE,
+                   varName="amig")
+gof_in
+plot(gof_in)
+
+## Geodesic distance
+library(network)
+library(sna)
+GeodesicDistribution <- function (i, data, sims, period, groupName,
+                                  varName, levls=c(1:5,Inf), cumulative=TRUE, ...) {
+  x <- networkExtraction(i, data, sims, period, groupName, varName)
+  require(sna)
+  a <- sna::geodist(symmetrize(x))$gdist
+  if (cumulative)
+  {
+    gdi <- sapply(levls, function(i){ sum(a<=i) })
+  }
+  else
+  {
+    gdi <- sapply(levls, function(i){ sum(a==i) })
+  }
+  names(gdi) <- as.character(levls)
+  gdi
+}
+
+gof_geo <- sienaGOF(educaResults, varName="amig", verbose=TRUE, 
+                    GeodesicDistribution,
+                    join=T)
+gof_geo
+plot(gof_geo) 
+
+## Holland and Leinhardt Triad Census; see ?sna::triad.census.
+detach("package:BiRewire", unload=TRUE)
+TriadCensus <- function(i, data, sims, wave, groupName, varName, levls=1:16){
+  unloadNamespace("igraph")
+  require(network)
+  require(sna)
+  x <- networkExtraction(i, data, sims, wave, groupName, varName)
+  if (network.edgecount(x) <= 0){x <- symmetrize(x)}
+  tc <- sna::triad.census(x)[1,levls]
+  tc
+}
+gof_triad <- sienaGOF(educaResults, varName="amig", verbose=TRUE, TriadCensus)
+plot(gof_triad, scale=TRUE, center=TRUE)
+
+## Clique census
+CliqueCensus<-function (i, obsData, sims, period, groupName, varName, levls = 1:5){
+  require(sna)
+  x <- networkExtraction(i, obsData, sims, period, groupName, varName)
+  cc0 <- sna::clique.census(x, mode='graph', tabulate.by.vertex = FALSE,
+                            enumerate=FALSE)[[1]]
+  cc <- 0*levls
+  names(cc) <- as.character(levls)
+  levels.used <- as.numeric(intersect(names(cc0), names(cc)))
+  cc[levels.used] <- cc0[levels.used]
+  cc
+}
+gof_clique <- sienaGOF(educaResults, varName="amig", 
+                       verbose=TRUE, CliqueCensus)
+plot(gof_clique, scale=TRUE, center=TRUE)
+
+```

@@ -1,0 +1,603 @@
+# input data
+data_1<- read.table(
+text="
+est	pval	coef	year	prueba	tipo	position	grado	item_id	fig_code	fig
+-0.073	0.047	-0.073	2013	Lenguaje	Bruto	-0.273	5	1	1_5	1
+-0.658	0.000	-0.658	2013	Lenguaje	Control	-0.858	5	1	1_5	1
+-0.180	0.000	-0.180	2013	Matemáticas	Bruto	-0.380	5	1	1_5	1
+-0.600	0.000	-0.600	2013	Matemáticas	Control	-0.800	5	1	1_5	1
+0.019	0.763	NA	2013	Lenguaje	Bruto	NA	9	1	1_9	2
+-0.676	0.000	-0.676	2013	Lenguaje	Control	-0.876	9	1	1_9	2
+-0.271	0.000	-0.271	2013	Matemáticas	Bruto	-0.471	9	1	1_9	2
+-0.686	0.000	-0.686	2013	Matemáticas	Control	-0.886	9	1	1_9	2
+-0.058	0.096	NA	2014	Lenguaje	Bruto	NA	5	1	1_5	1
+-0.668	0.000	-0.668	2014	Lenguaje	Control	-0.868	5	1	1_5	1
+-0.303	0.000	-0.303	2014	Matemáticas	Bruto	-0.503	5	1	1_5	1
+-0.686	0.000	-0.686	2014	Matemáticas	Control	-0.886	5	1	1_5	1
+-0.020	0.753	NA	2014	Lenguaje	Bruto	NA	9	1	1_9	2
+-0.719	0.000	-0.719	2014	Lenguaje	Control	-0.919	9	1	1_9	2
+-0.357	0.000	-0.357	2014	Matemáticas	Bruto	-0.557	9	1	1_9	2
+-0.735	0.000	-0.735	2014	Matemáticas	Control	-0.935	9	1	1_9	2
+-0.090	0.499	NA	2015	Lenguaje	Bruto	NA	5	1	1_5	1
+-0.313	0.008	-0.313	2015	Lenguaje	Control	-0.513	5	1	1_5	1
+-0.207	0.000	-0.207	2015	Matemáticas	Bruto	-0.407	5	1	1_5	1
+-0.640	0.000	-0.640	2015	Matemáticas	Control	-0.840	5	1	1_5	1
+-0.021	0.674	NA	2015	Lenguaje	Bruto	NA	9	1	1_9	2
+-0.511	0.000	-0.511	2015	Lenguaje	Control	-0.711	9	1	1_9	2
+-0.372	0.000	-0.372	2015	Matemáticas	Bruto	-0.572	9	1	1_9	2
+-0.714	0.000	-0.714	2015	Matemáticas	Control	-0.914	9	1	1_9	2
+0.303	0.000	0.303	2013	Lenguaje	Bruto	0.503	5	2	2_5	3
+-0.386	0.000	-0.386	2013	Lenguaje	Control	-0.586	5	2	2_5	3
+0.146	0.000	0.146	2013	Matemáticas	Bruto	0.346	5	2	2_5	3
+-0.326	0.000	-0.326	2013	Matemáticas	Control	-0.526	5	2	2_5	3
+-0.085	0.097	NA	2013	Lenguaje	Bruto	NA	9	2	2_9	4
+-0.571	0.000	-0.571	2013	Lenguaje	Control	-0.771	9	2	2_9	4
+-0.211	0.000	-0.211	2013	Matemáticas	Bruto	-0.411	9	2	2_9	4
+-0.502	0.000	-0.502	2013	Matemáticas	Control	-0.702	9	2	2_9	4
+0.284	0.000	0.284	2014	Lenguaje	Bruto	0.484	5	2	2_5	3
+-0.408	0.000	-0.408	2014	Lenguaje	Control	-0.608	5	2	2_5	3
+-0.040	0.248	NA	2014	Matemáticas	Bruto	NA	5	2	2_5	3
+-0.473	0.000	-0.473	2014	Matemáticas	Control	-0.673	5	2	2_5	3
+0.023	0.658	NA	2014	Lenguaje	Bruto	NA	9	2	2_9	4
+-0.573	0.000	-0.573	2014	Lenguaje	Control	-0.773	9	2	2_9	4
+-0.298	0.000	-0.298	2014	Matemáticas	Bruto	-0.498	9	2	2_9	4
+-0.620	0.000	-0.620	2014	Matemáticas	Control	-0.820	9	2	2_9	4
+0.071	0.600	NA	2015	Lenguaje	Bruto	NA	5	2	2_5	3
+-0.293	0.018	-0.293	2015	Lenguaje	Control	-0.493	5	2	2_5	3
+0.108	0.005	0.108	2015	Matemáticas	Bruto	0.308	5	2	2_5	3
+-0.414	0.000	-0.414	2015	Matemáticas	Control	-0.614	5	2	2_5	3
+0.036	0.405	NA	2015	Lenguaje	Bruto	NA	9	2	2_9	4
+-0.384	0.000	-0.384	2015	Lenguaje	Control	-0.584	9	2	2_9	4
+-0.370	0.000	-0.370	2015	Matemáticas	Bruto	-0.570	9	2	2_9	4
+-0.619	0.000	-0.619	2015	Matemáticas	Control	-0.819	9	2	2_9	4
+-0.349	0.000	-0.349	2013	Lenguaje	Bruto	-0.549	5	4	4_5	5
+-0.679	0.000	-0.679	2013	Lenguaje	Control	-0.879	5	4	4_5	5
+-0.468	0.000	-0.468	2013	Matemáticas	Bruto	-0.668	5	4	4_5	5
+-0.622	0.000	-0.622	2013	Matemáticas	Control	-0.822	5	4	4_5	5
+-1.575	0.000	-1.575	2013	Lenguaje	Bruto	-1.775	9	4	4_9	6
+-0.897	0.000	-0.897	2013	Lenguaje	Control	-1.097	9	4	4_9	6
+-1.145	0.000	-1.145	2013	Matemáticas	Bruto	-1.345	9	4	4_9	6
+-0.753	0.000	-0.753	2013	Matemáticas	Control	-0.953	9	4	4_9	6
+-0.369	0.000	-0.369	2014	Lenguaje	Bruto	-0.569	5	4	4_5	5
+-0.660	0.000	-0.660	2014	Lenguaje	Control	-0.860	5	4	4_5	5
+-0.514	0.000	-0.514	2014	Matemáticas	Bruto	-0.714	5	4	4_5	5
+-0.642	0.000	-0.642	2014	Matemáticas	Control	-0.842	5	4	4_5	5
+-1.529	0.000	-1.529	2014	Lenguaje	Bruto	-1.729	9	4	4_9	6
+-0.932	0.000	-0.932	2014	Lenguaje	Control	-1.132	9	4	4_9	6
+-1.192	0.000	-1.192	2014	Matemáticas	Bruto	-1.392	9	4	4_9	6
+-0.706	0.000	-0.706	2014	Matemáticas	Control	-0.906	9	4	4_9	6
+-0.429	0.007	-0.429	2015	Lenguaje	Bruto	-0.629	5	4	4_5	5
+-0.493	0.001	-0.493	2015	Lenguaje	Control	-0.693	5	4	4_5	5
+-0.410	0.000	-0.410	2015	Matemáticas	Bruto	-0.610	5	4	4_5	5
+-0.679	0.000	-0.679	2015	Matemáticas	Control	-0.879	5	4	4_5	5
+-0.781	0.000	-0.781	2015	Lenguaje	Bruto	-0.981	9	4	4_9	6
+-0.576	0.000	-0.576	2015	Lenguaje	Control	-0.776	9	4	4_9	6
+-1.064	0.000	-1.064	2015	Matemáticas	Bruto	-1.264	9	4	4_9	6
+-0.675	0.000	-0.675	2015	Matemáticas	Control	-0.875	9	4	4_9	6
+0.038	0.228	NA	2013	Lenguaje	Bruto	NA	5	5	5_5	7
+-0.401	0.000	-0.401	2013	Lenguaje	Control	-0.601	5	5	5_5	7
+-0.069	0.038	-0.069	2013	Matemáticas	Bruto	-0.269	5	5	5_5	7
+-0.365	0.000	-0.365	2013	Matemáticas	Control	-0.565	5	5	5_5	7
+-0.097	0.083	NA	2013	Lenguaje	Bruto	NA	9	5	5_9	8
+-0.544	0.000	-0.544	2013	Lenguaje	Control	-0.744	9	5	5_9	8
+-0.378	0.000	-0.378	2013	Matemáticas	Bruto	-0.578	9	5	5_9	8
+-0.574	0.000	-0.574	2013	Matemáticas	Control	-0.774	9	5	5_9	8
+0.011	0.741	NA	2014	Lenguaje	Bruto	NA	5	5	5_5	7
+-0.481	0.000	-0.481	2014	Lenguaje	Control	-0.681	5	5	5_5	7
+-0.221	0.000	-0.221	2014	Matemáticas	Bruto	-0.421	5	5	5_5	7
+-0.477	0.000	-0.477	2014	Matemáticas	Control	-0.677	5	5	5_5	7
+0.042	0.457	NA	2014	Lenguaje	Bruto	NA	9	5	5_9	8
+-0.605	0.000	-0.605	2014	Lenguaje	Control	-0.805	9	5	5_9	8
+-0.377	0.000	-0.377	2014	Matemáticas	Bruto	-0.577	9	5	5_9	8
+-0.606	0.000	-0.606	2014	Matemáticas	Control	-0.806	9	5	5_9	8
+-0.203	0.121	NA	2015	Lenguaje	Bruto	NA	5	5	5_5	7
+-0.354	0.003	-0.354	2015	Lenguaje	Control	-0.554	5	5	5_5	7
+-0.049	0.207	NA	2015	Matemáticas	Bruto	NA	5	5	5_5	7
+-0.450	0.000	-0.450	2015	Matemáticas	Control	-0.650	5	5	5_5	7
+0.012	0.788	NA	2015	Lenguaje	Bruto	NA	9	5	5_9	8
+-0.416	0.000	-0.416	2015	Lenguaje	Control	-0.616	9	5	5_9	8
+-0.349	0.000	-0.349	2015	Matemáticas	Bruto	-0.549	9	5	5_9	8
+-0.625	0.000	-0.625	2015	Matemáticas	Control	-0.825	9	5	5_9	8
+-0.201	0.000	-0.201	2013	Lenguaje	Bruto	-0.401	5	6	6_5	9
+-0.576	0.000	-0.576	2013	Lenguaje	Control	-0.776	5	6	6_5	9
+-0.269	0.000	-0.269	2013	Matemáticas	Bruto	-0.469	5	6	6_5	9
+-0.446	0.000	-0.446	2013	Matemáticas	Control	-0.646	5	6	6_5	9
+-0.552	0.000	-0.552	2013	Lenguaje	Bruto	-0.752	9	6	6_9	10
+-0.881	0.000	-0.881	2013	Lenguaje	Control	-1.081	9	6	6_9	10
+-0.607	0.000	-0.607	2013	Matemáticas	Bruto	-0.807	9	6	6_9	10
+-0.784	0.000	-0.784	2013	Matemáticas	Control	-0.984	9	6	6_9	10
+-0.221	0.000	-0.221	2014	Lenguaje	Bruto	-0.421	5	6	6_5	9
+-0.597	0.000	-0.597	2014	Lenguaje	Control	-0.797	5	6	6_5	9
+-0.407	0.000	-0.407	2014	Matemáticas	Bruto	-0.607	5	6	6_5	9
+-0.549	0.000	-0.549	2014	Matemáticas	Control	-0.749	5	6	6_5	9
+-0.520	0.000	-0.520	2014	Lenguaje	Bruto	-0.720	9	6	6_9	10
+-0.850	0.000	-0.850	2014	Lenguaje	Control	-1.050	9	6	6_9	10
+-0.727	0.000	-0.727	2014	Matemáticas	Bruto	-0.927	9	6	6_9	10
+-0.857	0.000	-0.857	2014	Matemáticas	Control	-1.057	9	6	6_9	10
+-0.152	0.389	NA	2015	Lenguaje	Bruto	NA	5	6	6_5	9
+-0.247	0.126	NA	2015	Lenguaje	Control	NA	5	6	6_5	9
+-0.345	0.000	-0.345	2015	Matemáticas	Bruto	-0.545	5	6	6_5	9
+-0.602	0.000	-0.602	2015	Matemáticas	Control	-0.802	5	6	6_5	9
+-0.168	0.001	-0.168	2015	Lenguaje	Bruto	-0.368	9	6	6_9	10
+-0.546	0.000	-0.546	2015	Lenguaje	Control	-0.746	9	6	6_9	10
+-0.583	0.000	-0.583	2015	Matemáticas	Bruto	-0.783	9	6	6_9	10
+-0.761	0.000	-0.761	2015	Matemáticas	Control	-0.961	9	6	6_9	10
+0.530	0.000	0.530	2013	Lenguaje	Bruto	0.730	5	7	7_5	11
+0.653	0.000	0.653	2013	Lenguaje	Control	0.853	5	7	7_5	11
+0.533	0.000	0.533	2013	Matemáticas	Bruto	0.733	5	7	7_5	11
+0.513	0.000	0.513	2013	Matemáticas	Control	0.713	5	7	7_5	11
+0.296	0.000	0.296	2013	Lenguaje	Bruto	0.496	9	7	7_9	12
+0.311	0.000	0.311	2013	Lenguaje	Control	0.511	9	7	7_9	12
+0.329	0.000	0.329	2013	Matemáticas	Bruto	0.529	9	7	7_9	12
+0.294	0.000	0.294	2013	Matemáticas	Control	0.494	9	7	7_9	12
+0.517	0.000	0.517	2014	Lenguaje	Bruto	0.717	5	7	7_5	11
+0.644	0.000	0.644	2014	Lenguaje	Control	0.844	5	7	7_5	11
+0.584	0.000	0.584	2014	Matemáticas	Bruto	0.784	5	7	7_5	11
+0.580	0.000	0.580	2014	Matemáticas	Control	0.780	5	7	7_5	11
+0.247	0.000	0.247	2014	Lenguaje	Bruto	0.447	9	7	7_9	12
+0.370	0.000	0.370	2014	Lenguaje	Control	0.570	9	7	7_9	12
+0.343	0.000	0.343	2014	Matemáticas	Bruto	0.543	9	7	7_9	12
+0.379	0.000	0.379	2014	Matemáticas	Control	0.579	9	7	7_9	12
+0.683	0.000	0.683	2015	Lenguaje	Bruto	0.883	5	7	7_5	11
+0.509	0.000	0.509	2015	Lenguaje	Control	0.709	5	7	7_5	11
+0.927	0.000	0.927	2015	Matemáticas	Bruto	1.127	5	7	7_5	11
+0.765	0.000	0.765	2015	Matemáticas	Control	0.965	5	7	7_5	11
+1.523	0.000	1.523	2013	Lenguaje	Bruto	1.723	5	8	8_5	13
+1.138	0.000	1.138	2013	Lenguaje	Control	1.338	5	8	8_5	13
+1.254	0.000	1.254	2013	Matemáticas	Bruto	1.454	5	8	8_5	13
+0.909	0.000	0.909	2013	Matemáticas	Control	1.109	5	8	8_5	13
+0.700	0.000	0.700	2013	Lenguaje	Bruto	0.900	9	8	8_9	14
+0.634	0.000	0.634	2013	Lenguaje	Control	0.834	9	8	8_9	14
+0.529	0.000	0.529	2013	Matemáticas	Bruto	0.729	9	8	8_9	14
+0.431	0.000	0.431	2013	Matemáticas	Control	0.631	9	8	8_9	14
+1.374	0.000	1.374	2014	Lenguaje	Bruto	1.574	5	8	8_5	13
+1.065	0.000	1.065	2014	Lenguaje	Control	1.265	5	8	8_5	13
+1.141	0.000	1.141	2014	Matemáticas	Bruto	1.341	5	8	8_5	13
+0.911	0.000	0.911	2014	Matemáticas	Control	1.111	5	8	8_5	13
+0.563	0.000	0.563	2014	Lenguaje	Bruto	0.763	9	8	8_9	14
+0.649	0.000	0.649	2014	Lenguaje	Control	0.849	9	8	8_9	14
+0.563	0.000	0.563	2014	Matemáticas	Bruto	0.763	9	8	8_9	14
+0.556	0.000	0.556	2014	Matemáticas	Control	0.756	9	8	8_9	14
+1.288	0.000	1.288	2015	Lenguaje	Bruto	1.488	5	8	8_5	13
+0.873	0.000	0.873	2015	Lenguaje	Control	1.073	5	8	8_5	13
+1.530	0.000	1.530	2015	Matemáticas	Bruto	1.730	5	8	8_5	13
+1.192	0.000	1.192	2015	Matemáticas	Control	1.392	5	8	8_5	13
+-0.046	0.201	NA	2013	Lenguaje	Bruto	NA	5	9	9_5	15
+0.302	0.000	0.302	2013	Lenguaje	Control	0.502	5	9	9_5	15
+0.257	0.000	0.257	2013	Matemáticas	Bruto	0.457	5	9	9_5	15
+0.322	0.000	0.322	2013	Matemáticas	Control	0.522	5	9	9_5	15
+-0.752	0.000	-0.752	2013	Lenguaje	Bruto	-0.952	9	9	9_9	16
+-0.082	0.031	-0.082	2013	Lenguaje	Control	-0.282	9	9	9_9	16
+-0.418	0.000	-0.418	2013	Matemáticas	Bruto	-0.618	9	9	9_9	16
+-0.081	0.034	-0.081	2013	Matemáticas	Control	-0.281	9	9	9_9	16
+0.082	0.027	0.082	2014	Lenguaje	Bruto	0.282	5	9	9_5	15
+0.339	0.000	0.339	2014	Lenguaje	Control	0.539	5	9	9_5	15
+0.263	0.000	0.263	2014	Matemáticas	Bruto	0.463	5	9	9_5	15
+0.285	0.000	0.285	2014	Matemáticas	Control	0.485	5	9	9_5	15
+-0.821	0.000	-0.821	2014	Lenguaje	Bruto	-1.021	9	9	9_9	16
+-0.109	0.007	-0.109	2014	Lenguaje	Control	-0.309	9	9	9_9	16
+-0.376	0.000	-0.376	2014	Matemáticas	Bruto	-0.576	9	9	9_9	16
+-0.026	0.530	NA	2014	Matemáticas	Control	NA	9	9	9_9	16
+0.374	0.010	0.374	2015	Lenguaje	Bruto	0.574	5	9	9_5	15
+0.327	0.015	0.327	2015	Lenguaje	Control	0.527	5	9	9_5	15
+0.360	0.000	0.360	2015	Matemáticas	Bruto	0.560	5	9	9_5	15
+0.422	0.000	0.422	2015	Matemáticas	Control	0.622	5	9	9_5	15
+-1.635	0.000	-1.635	2013	Lenguaje	Bruto	-1.835	9	10	10_9	17
+0.047	0.366	NA	2013	Lenguaje	Control	NA	9	10	10_9	17
+-1.585	0.000	-1.585	2013	Matemáticas	Bruto	-1.785	9	10	10_9	17
+0.173	0.005	0.173	2013	Matemáticas	Control	0.373	9	10	10_9	17
+-1.737	0.000	-1.737	2014	Lenguaje	Bruto	-1.937	9	10	10_9	17
+0.175	0.001	0.175	2014	Lenguaje	Control	0.375	9	10	10_9	17
+-1.385	0.000	-1.385	2014	Matemáticas	Bruto	-1.585	9	10	10_9	17
+0.350	0.000	0.350	2014	Matemáticas	Control	0.550	9	10	10_9	17
+-1.282	0.000	-1.282	2013	Lenguaje	Bruto	-1.482	9	11	11_9	18
+0.120	0.021	0.120	2013	Lenguaje	Control	0.320	9	11	11_9	18
+-1.249	0.000	-1.249	2013	Matemáticas	Bruto	-1.449	9	11	11_9	18
+0.217	0.001	0.217	2013	Matemáticas	Control	0.417	9	11	11_9	18
+-1.195	0.000	-1.195	2014	Lenguaje	Bruto	-1.395	9	11	11_9	18
+0.373	0.000	0.373	2014	Lenguaje	Control	0.573	9	11	11_9	18
+-0.993	0.000	-0.993	2014	Matemáticas	Bruto	-1.193	9	11	11_9	18
+0.425	0.000	0.425	2014	Matemáticas	Control	0.625	9	11	11_9	18
+0.190	0.019	0.190	2013	Lenguaje	Bruto	0.390	9	12	12_9	19
+0.691	0.000	0.691	2013	Lenguaje	Control	0.891	9	12	12_9	19
+0.286	0.002	0.286	2013	Matemáticas	Bruto	0.486	9	12	12_9	19
+0.823	0.000	0.823	2013	Matemáticas	Control	1.023	9	12	12_9	19
+0.151	0.055	NA	2014	Lenguaje	Bruto	NA	9	12	12_9	19
+0.871	0.000	0.871	2014	Lenguaje	Control	1.071	9	12	12_9	19
+0.509	0.000	0.509	2014	Matemáticas	Bruto	0.709	9	12	12_9	19
+1.141	0.000	1.141	2014	Matemáticas	Control	1.341	9	12	12_9	19
+0.150	0.168	NA	2013	Lenguaje	Bruto	NA	9	13	13_9	20
+0.911	0.000	0.911	2013	Lenguaje	Control	1.111	9	13	13_9	20
+0.084	0.479	NA	2013	Matemáticas	Bruto	NA	9	13	13_9	20
+0.834	0.000	0.834	2013	Matemáticas	Control	1.034	9	13	13_9	20
+-0.015	0.890	NA	2014	Lenguaje	Bruto	NA	9	13	13_9	20
+0.881	0.000	0.881	2014	Lenguaje	Control	1.081	9	13	13_9	20
+0.360	0.001	0.360	2014	Matemáticas	Bruto	0.560	9	13	13_9	20
+1.162	0.000	1.162	2014	Matemáticas	Control	1.362	9	13	13_9	20
+1.178	0.000	1.178	2013	Lenguaje	Bruto	1.378	5	14	14_5	21
+0.978	0.000	0.978	2013	Lenguaje	Control	1.178	5	14	14_5	21
+1.507	0.000	1.507	2013	Matemáticas	Bruto	1.707	5	14	14_5	21
+1.289	0.000	1.289	2013	Matemáticas	Control	1.489	5	14	14_5	21
+-0.569	0.000	-0.569	2013	Lenguaje	Bruto	-0.769	9	14	14_9	22
+0.185	0.000	0.185	2013	Lenguaje	Control	0.385	9	14	14_9	22
+-0.455	0.000	-0.455	2013	Matemáticas	Bruto	-0.655	9	14	14_9	22
+0.309	0.000	0.309	2013	Matemáticas	Control	0.509	9	14	14_9	22
+1.101	0.000	1.101	2014	Lenguaje	Bruto	1.301	5	14	14_5	21
+0.881	0.000	0.881	2014	Lenguaje	Control	1.081	5	14	14_5	21
+1.363	0.000	1.363	2014	Matemáticas	Bruto	1.563	5	14	14_5	21
+1.200	0.000	1.200	2014	Matemáticas	Control	1.400	5	14	14_5	21
+-0.672	0.000	-0.672	2014	Lenguaje	Bruto	-0.872	9	14	14_9	22
+0.277	0.000	0.277	2014	Lenguaje	Control	0.477	9	14	14_9	22
+-0.499	0.000	-0.499	2014	Matemáticas	Bruto	-0.699	9	14	14_9	22
+0.356	0.000	0.356	2014	Matemáticas	Control	0.556	9	14	14_9	22
+1.722	0.000	1.722	2015	Lenguaje	Bruto	1.922	5	14	14_5	21
+1.169	0.000	1.169	2015	Lenguaje	Control	1.369	5	14	14_5	21
+1.786	0.000	1.786	2015	Matemáticas	Bruto	1.986	5	14	14_5	21
+1.239	0.000	1.239	2015	Matemáticas	Control	1.439	5	14	14_5	21
+-0.545	0.000	-0.545	2015	Lenguaje	Bruto	-0.745	9	14	14_9	22
+0.086	0.027	0.086	2015	Lenguaje	Control	0.286	9	14	14_9	22
+-0.355	0.000	-0.355	2015	Matemáticas	Bruto	-0.555	9	14	14_9	22
+0.182	0.000	0.182	2015	Matemáticas	Control	0.382	9	14	14_9	22
+1.422	0.000	1.422	2013	Lenguaje	Bruto	1.622	5	15	15_5	23
+1.164	0.000	1.164	2013	Lenguaje	Control	1.364	5	15	15_5	23
+1.797	0.000	1.797	2013	Matemáticas	Bruto	1.997	5	15	15_5	23
+1.497	0.000	1.497	2013	Matemáticas	Control	1.697	5	15	15_5	23
+-0.641	0.000	-0.641	2013	Lenguaje	Bruto	-0.841	9	15	15_9	24
+0.227	0.000	0.227	2013	Lenguaje	Control	0.427	9	15	15_9	24
+-0.478	0.000	-0.478	2013	Matemáticas	Bruto	-0.678	9	15	15_9	24
+0.420	0.000	0.420	2013	Matemáticas	Control	0.620	9	15	15_9	24
+1.348	0.000	1.348	2014	Lenguaje	Bruto	1.548	5	15	15_5	23
+1.039	0.000	1.039	2014	Lenguaje	Control	1.239	5	15	15_5	23
+1.734	0.000	1.734	2014	Matemáticas	Bruto	1.934	5	15	15_5	23
+1.490	0.000	1.490	2014	Matemáticas	Control	1.690	5	15	15_5	23
+-0.657	0.000	-0.657	2014	Lenguaje	Bruto	-0.857	9	15	15_9	24
+0.384	0.000	0.384	2014	Lenguaje	Control	0.584	9	15	15_9	24
+-0.406	0.000	-0.406	2014	Matemáticas	Bruto	-0.606	9	15	15_9	24
+0.519	0.000	0.519	2014	Matemáticas	Control	0.719	9	15	15_9	24
+2.155	0.000	2.155	2015	Lenguaje	Bruto	2.355	5	15	15_5	23
+1.481	0.000	1.481	2015	Lenguaje	Control	1.681	5	15	15_5	23
+2.213	0.000	2.213	2015	Matemáticas	Bruto	2.413	5	15	15_5	23
+1.576	0.000	1.576	2015	Matemáticas	Control	1.776	5	15	15_5	23
+-0.499	0.000	-0.499	2015	Lenguaje	Bruto	-0.699	9	15	15_9	24
+0.135	0.001	0.135	2015	Lenguaje	Control	0.335	9	15	15_9	24
+-0.263	0.000	-0.263	2015	Matemáticas	Bruto	-0.463	9	15	15_9	24
+0.281	0.000	0.281	2015	Matemáticas	Control	0.481	9	15	15_9	24
+1.552	0.000	1.552	2013	Lenguaje	Bruto	1.752	5	16	16_5	25
+1.194	0.000	1.194	2013	Lenguaje	Control	1.394	5	16	16_5	25
+1.913	0.000	1.913	2013	Matemáticas	Bruto	2.113	5	16	16_5	25
+1.540	0.000	1.540	2013	Matemáticas	Control	1.740	5	16	16_5	25
+0.576	0.000	0.576	2013	Lenguaje	Bruto	0.776	9	16	16_9	26
+0.644	0.000	0.644	2013	Lenguaje	Control	0.844	9	16	16_9	26
+0.679	0.000	0.679	2013	Matemáticas	Bruto	0.879	9	16	16_9	26
+0.740	0.000	0.740	2013	Matemáticas	Control	0.940	9	16	16_9	26
+1.414	0.000	1.414	2014	Lenguaje	Bruto	1.614	5	16	16_5	25
+1.049	0.000	1.049	2014	Lenguaje	Control	1.249	5	16	16_5	25
+1.571	0.000	1.571	2014	Matemáticas	Bruto	1.771	5	16	16_5	25
+1.302	0.000	1.302	2014	Matemáticas	Control	1.502	5	16	16_5	25
+0.692	0.000	0.692	2014	Lenguaje	Bruto	0.892	9	16	16_9	26
+0.835	0.000	0.835	2014	Lenguaje	Control	1.035	9	16	16_9	26
+0.866	0.000	0.866	2014	Matemáticas	Bruto	1.066	9	16	16_9	26
+0.974	0.000	0.974	2014	Matemáticas	Control	1.174	9	16	16_9	26
+2.102	0.000	2.102	2015	Lenguaje	Bruto	2.302	5	16	16_5	25
+1.434	0.000	1.434	2015	Lenguaje	Control	1.634	5	16	16_5	25
+2.294	0.000	2.294	2015	Matemáticas	Bruto	2.494	5	16	16_5	25
+1.632	0.000	1.632	2015	Matemáticas	Control	1.832	5	16	16_5	25
+0.421	0.000	0.421	2015	Lenguaje	Bruto	0.621	9	16	16_9	26
+0.461	0.000	0.461	2015	Lenguaje	Control	0.661	9	16	16_9	26
+0.647	0.000	0.647	2015	Matemáticas	Bruto	0.847	9	16	16_9	26
+0.670	0.000	0.670	2015	Matemáticas	Control	0.870	9	16	16_9	26
+1.824	0.000	1.824	2013	Lenguaje	Bruto	2.024	5	17	17_5	27
+1.490	0.000	1.490	2013	Lenguaje	Control	1.690	5	17	17_5	27
+2.146	0.000	2.146	2013	Matemáticas	Bruto	2.346	5	17	17_5	27
+1.792	0.000	1.792	2013	Matemáticas	Control	1.992	5	17	17_5	27
+-0.151	0.016	-0.151	2013	Lenguaje	Bruto	-0.351	9	17	17_9	28
+0.464	0.000	0.464	2013	Lenguaje	Control	0.664	9	17	17_9	28
+-0.062	0.355	NA	2013	Matemáticas	Bruto	NA	9	17	17_9	28
+0.560	0.000	0.560	2013	Matemáticas	Control	0.760	9	17	17_9	28
+1.797	0.000	1.797	2014	Lenguaje	Bruto	1.997	5	17	17_5	27
+1.398	0.000	1.398	2014	Lenguaje	Control	1.598	5	17	17_5	27
+2.012	0.000	2.012	2014	Matemáticas	Bruto	2.212	5	17	17_5	27
+1.719	0.000	1.719	2014	Matemáticas	Control	1.919	5	17	17_5	27
+-0.158	0.009	-0.158	2014	Lenguaje	Bruto	-0.358	9	17	17_9	28
+0.521	0.000	0.521	2014	Lenguaje	Control	0.721	9	17	17_9	28
+0.124	0.068	NA	2014	Matemáticas	Bruto	NA	9	17	17_9	28
+0.730	0.000	0.730	2014	Matemáticas	Control	0.930	9	17	17_9	28
+2.577	0.000	2.577	2015	Lenguaje	Bruto	2.777	5	17	17_5	27
+1.827	0.000	1.827	2015	Lenguaje	Control	2.027	5	17	17_5	27
+2.635	0.000	2.635	2015	Matemáticas	Bruto	2.835	5	17	17_5	27
+1.919	0.000	1.919	2015	Matemáticas	Control	2.119	5	17	17_5	27
+-0.176	0.000	-0.176	2015	Lenguaje	Bruto	-0.376	9	17	17_9	28
+0.210	0.000	0.210	2015	Lenguaje	Control	0.410	9	17	17_9	28
+0.077	0.162	NA	2015	Matemáticas	Bruto	NA	9	17	17_9	28
+0.399	0.000	0.399	2015	Matemáticas	Control	0.599	9	17	17_9	28
+1.454	0.000	1.454	2013	Lenguaje	Bruto	1.654	5	18	18_5	29
+1.359	0.000	1.359	2013	Lenguaje	Control	1.559	5	18	18_5	29
+1.771	0.000	1.771	2013	Matemáticas	Bruto	1.971	5	18	18_5	29
+1.618	0.000	1.618	2013	Matemáticas	Control	1.818	5	18	18_5	29
+-0.839	0.000	-0.839	2013	Lenguaje	Bruto	-1.039	9	18	18_9	30
+0.374	0.000	0.374	2013	Lenguaje	Control	0.574	9	18	18_9	30
+-0.795	0.000	-0.795	2013	Matemáticas	Bruto	-0.995	9	18	18_9	30
+0.445	0.000	0.445	2013	Matemáticas	Control	0.645	9	18	18_9	30
+1.413	0.000	1.413	2014	Lenguaje	Bruto	1.613	5	18	18_5	29
+1.262	0.000	1.262	2014	Lenguaje	Control	1.462	5	18	18_5	29
+1.690	0.000	1.690	2014	Matemáticas	Bruto	1.890	5	18	18_5	29
+1.562	0.000	1.562	2014	Matemáticas	Control	1.762	5	18	18_5	29
+-1.031	0.000	-1.031	2014	Lenguaje	Bruto	-1.231	9	18	18_9	30
+0.358	0.000	0.358	2014	Lenguaje	Control	0.558	9	18	18_9	30
+-0.619	0.000	-0.619	2014	Matemáticas	Bruto	-0.819	9	18	18_9	30
+0.624	0.000	0.624	2014	Matemáticas	Control	0.824	9	18	18_9	30
+2.269	0.000	2.269	2015	Lenguaje	Bruto	2.469	5	18	18_5	29
+1.696	0.000	1.696	2015	Lenguaje	Control	1.896	5	18	18_5	29
+2.356	0.000	2.356	2015	Matemáticas	Bruto	2.556	5	18	18_5	29
+1.825	0.000	1.825	2015	Matemáticas	Control	2.025	5	18	18_5	29
+-0.483	0.000	-0.483	2015	Lenguaje	Bruto	-0.683	9	18	18_9	30
+0.640	0.000	0.640	2015	Lenguaje	Control	0.840	9	18	18_9	30
+-0.324	0.000	-0.324	2015	Matemáticas	Bruto	-0.524	9	18	18_9	30
+0.722	0.000	0.722	2015	Matemáticas	Control	0.922	9	18	18_9	30
+1.759	0.000	1.759	2013	Lenguaje	Bruto	1.959	5	19	19_5	31
+1.475	0.000	1.475	2013	Lenguaje	Control	1.675	5	19	19_5	31
+2.104	0.000	2.104	2013	Matemáticas	Bruto	2.304	5	19	19_5	31
+1.773	0.000	1.773	2013	Matemáticas	Control	1.973	5	19	19_5	31
+-0.545	0.000	-0.545	2013	Lenguaje	Bruto	-0.745	9	19	19_9	32
+0.454	0.000	0.454	2013	Lenguaje	Control	0.654	9	19	19_9	32
+-0.608	0.000	-0.608	2013	Matemáticas	Bruto	-0.808	9	19	19_9	32
+0.424	0.000	0.424	2013	Matemáticas	Control	0.624	9	19	19_9	32
+1.766	0.000	1.766	2014	Lenguaje	Bruto	1.966	5	19	19_5	31
+1.412	0.000	1.412	2014	Lenguaje	Control	1.612	5	19	19_5	31
+1.930	0.000	1.930	2014	Matemáticas	Bruto	2.130	5	19	19_5	31
+1.656	0.000	1.656	2014	Matemáticas	Control	1.856	5	19	19_5	31
+-0.800	0.000	-0.800	2014	Lenguaje	Bruto	-1.000	9	19	19_9	32
+0.503	0.000	0.503	2014	Lenguaje	Control	0.703	9	19	19_9	32
+-0.397	0.000	-0.397	2014	Matemáticas	Bruto	-0.597	9	19	19_9	32
+0.724	0.000	0.724	2014	Matemáticas	Control	0.924	9	19	19_9	32
+2.573	0.000	2.573	2015	Lenguaje	Bruto	2.773	5	19	19_5	31
+1.823	0.000	1.823	2015	Lenguaje	Control	2.023	5	19	19_5	31
+2.586	0.000	2.586	2015	Matemáticas	Bruto	2.786	5	19	19_5	31
+1.882	0.000	1.882	2015	Matemáticas	Control	2.082	5	19	19_5	31
+0.239	0.001	0.239	2015	Lenguaje	Bruto	0.439	9	19	19_9	32
+0.776	0.000	0.776	2015	Lenguaje	Control	0.976	9	19	19_9	32
+0.324	0.000	0.324	2015	Matemáticas	Bruto	0.524	9	19	19_9	32
+0.818	0.000	0.818	2015	Matemáticas	Control	1.018	9	19	19_9	32
+1.249	0.000	1.249	2013	Lenguaje	Bruto	1.449	5	20	20_5	33
+1.079	0.000	1.079	2013	Lenguaje	Control	1.279	5	20	20_5	33
+1.596	0.000	1.596	2013	Matemáticas	Bruto	1.796	5	20	20_5	33
+1.370	0.000	1.370	2013	Matemáticas	Control	1.570	5	20	20_5	33
+-1.039	0.000	-1.039	2013	Lenguaje	Bruto	-1.239	9	20	20_9	34
+0.024	0.543	NA	2013	Lenguaje	Control	NA	9	20	20_9	34
+-1.016	0.000	-1.016	2013	Matemáticas	Bruto	-1.216	9	20	20_9	34
+0.092	0.041	0.092	2013	Matemáticas	Control	0.292	9	20	20_9	34
+1.089	0.000	1.089	2014	Lenguaje	Bruto	1.289	5	20	20_5	33
+1.000	0.000	1.000	2014	Lenguaje	Control	1.200	5	20	20_5	33
+1.242	0.000	1.242	2014	Matemáticas	Bruto	1.442	5	20	20_5	33
+1.169	0.000	1.169	2014	Matemáticas	Control	1.369	5	20	20_5	33
+-1.279	0.000	-1.279	2014	Lenguaje	Bruto	-1.479	9	20	20_9	34
+-0.036	0.367	NA	2014	Lenguaje	Control	NA	9	20	20_9	34
+-1.034	0.000	-1.034	2014	Matemáticas	Bruto	-1.234	9	20	20_9	34
+0.084	0.089	NA	2014	Matemáticas	Control	NA	9	20	20_9	34
+1.837	0.000	1.837	2015	Lenguaje	Bruto	2.037	5	20	20_5	33
+1.304	0.000	1.304	2015	Lenguaje	Control	1.504	5	20	20_5	33
+1.972	0.000	1.972	2015	Matemáticas	Bruto	2.172	5	20	20_5	33
+1.477	0.000	1.477	2015	Matemáticas	Control	1.677	5	20	20_5	33
+-0.807	0.000	-0.807	2015	Lenguaje	Bruto	-1.007	9	20	20_9	34
+0.172	0.000	0.172	2015	Lenguaje	Control	0.372	9	20	20_9	34
+-0.615	0.000	-0.615	2015	Matemáticas	Bruto	-0.815	9	20	20_9	34
+0.307	0.000	0.307	2015	Matemáticas	Control	0.507	9	20	20_9	34
+1.543	0.000	1.543	2013	Lenguaje	Bruto	1.743	5	21	21_5	35
+1.340	0.000	1.340	2013	Lenguaje	Control	1.540	5	21	21_5	35
+1.880	0.000	1.880	2013	Matemáticas	Bruto	2.080	5	21	21_5	35
+1.635	0.000	1.635	2013	Matemáticas	Control	1.835	5	21	21_5	35
+-0.576	0.000	-0.576	2013	Lenguaje	Bruto	-0.776	9	21	21_9	36
+0.457	0.000	0.457	2013	Lenguaje	Control	0.657	9	21	21_9	36
+-0.535	0.000	-0.535	2013	Matemáticas	Bruto	-0.735	9	21	21_9	36
+0.494	0.000	0.494	2013	Matemáticas	Control	0.694	9	21	21_9	36
+1.543	0.000	1.543	2014	Lenguaje	Bruto	1.743	5	21	21_5	35
+1.304	0.000	1.304	2014	Lenguaje	Control	1.504	5	21	21_5	35
+1.808	0.000	1.808	2014	Matemáticas	Bruto	2.008	5	21	21_5	35
+1.615	0.000	1.615	2014	Matemáticas	Control	1.815	5	21	21_5	35
+-0.622	0.000	-0.622	2014	Lenguaje	Bruto	-0.822	9	21	21_9	36
+0.477	0.000	0.477	2014	Lenguaje	Control	0.677	9	21	21_9	36
+-0.242	0.001	-0.242	2014	Matemáticas	Bruto	-0.442	9	21	21_9	36
+0.757	0.000	0.757	2014	Matemáticas	Control	0.957	9	21	21_9	36
+2.325	0.000	2.325	2015	Lenguaje	Bruto	2.525	5	21	21_5	35
+1.687	0.000	1.687	2015	Lenguaje	Control	1.887	5	21	21_5	35
+2.426	0.000	2.426	2015	Matemáticas	Bruto	2.626	5	21	21_5	35
+1.818	0.000	1.818	2015	Matemáticas	Control	2.018	5	21	21_5	35
+-0.004	0.948	NA	2015	Lenguaje	Bruto	NA	9	21	21_9	36
+0.704	0.000	0.704	2015	Lenguaje	Control	0.904	9	21	21_9	36
+0.137	0.065	NA	2015	Matemáticas	Bruto	NA	9	21	21_9	36
+0.828	0.000	0.828	2015	Matemáticas	Control	1.028	9	21	21_9	36
+0.781	0.000	0.781	2013	Lenguaje	Bruto	0.981	5	22	22_5	37
+0.756	0.000	0.756	2013	Lenguaje	Control	0.956	5	22	22_5	37
+0.628	0.000	0.628	2013	Matemáticas	Bruto	0.828	5	22	22_5	37
+0.585	0.000	0.585	2013	Matemáticas	Control	0.785	5	22	22_5	37
+-0.314	0.000	-0.314	2013	Lenguaje	Bruto	-0.514	9	22	22_9	38
+0.176	0.000	0.176	2013	Lenguaje	Control	0.376	9	22	22_9	38
+-0.046	0.180	NA	2013	Matemáticas	Bruto	NA	9	22	22_9	38
+0.172	0.000	0.172	2013	Matemáticas	Control	0.372	9	22	22_9	38
+0.715	0.000	0.715	2014	Lenguaje	Bruto	0.915	5	22	22_5	37
+0.726	0.000	0.726	2014	Lenguaje	Control	0.926	5	22	22_5	37
+0.663	0.000	0.663	2014	Matemáticas	Bruto	0.863	5	22	22_5	37
+0.646	0.000	0.646	2014	Matemáticas	Control	0.846	5	22	22_5	37
+-0.364	0.000	-0.364	2014	Lenguaje	Bruto	-0.564	9	22	22_9	38
+0.213	0.000	0.213	2014	Lenguaje	Control	0.413	9	22	22_9	38
+-0.003	0.939	NA	2014	Matemáticas	Bruto	NA	9	22	22_9	38
+0.261	0.000	0.261	2014	Matemáticas	Control	0.461	9	22	22_9	38
+0.604	0.000	0.604	2015	Lenguaje	Bruto	0.804	5	22	22_5	37
+0.368	0.001	0.368	2015	Lenguaje	Control	0.568	5	22	22_5	37
+1.042	0.000	1.042	2015	Matemáticas	Bruto	1.242	5	22	22_5	37
+0.838	0.000	0.838	2015	Matemáticas	Control	1.038	5	22	22_5	37
+-0.124	0.000	-0.124	2015	Lenguaje	Bruto	-0.324	9	22	22_9	38
+0.139	0.000	0.139	2015	Lenguaje	Control	0.339	9	22	22_9	38
+0.197	0.000	0.197	2015	Matemáticas	Bruto	0.397	9	22	22_9	38
+0.433	0.000	0.433	2015	Matemáticas	Control	0.633	9	22	22_9	38
+-0.273	0.000	-0.273	2013	Lenguaje	Bruto	-0.473	5	23	23_5	39
+0.271	0.000	0.271	2013	Lenguaje	Control	0.471	5	23	23_5	39
+-0.057	0.079	NA	2013	Matemáticas	Bruto	NA	5	23	23_5	39
+0.255	0.000	0.255	2013	Matemáticas	Control	0.455	5	23	23_5	39
+-0.948	0.000	-0.948	2013	Lenguaje	Bruto	-1.148	9	23	23_9	40
+-0.164	0.000	-0.164	2013	Lenguaje	Control	-0.364	9	23	23_9	40
+-0.428	0.000	-0.428	2013	Matemáticas	Bruto	-0.628	9	23	23_9	40
+-0.050	0.108	NA	2013	Matemáticas	Control	NA	9	23	23_9	40
+-0.281	0.000	-0.281	2014	Lenguaje	Bruto	-0.481	5	23	23_5	39
+0.316	0.000	0.316	2014	Lenguaje	Control	0.516	5	23	23_5	39
+0.101	0.001	0.101	2014	Matemáticas	Bruto	0.301	5	23	23_5	39
+0.355	0.000	0.355	2014	Matemáticas	Control	0.555	5	23	23_5	39
+-1.070	0.000	-1.070	2014	Lenguaje	Bruto	-1.270	9	23	23_9	40
+-0.193	0.000	-0.193	2014	Lenguaje	Control	-0.393	9	23	23_9	40
+-0.471	0.000	-0.471	2014	Matemáticas	Bruto	-0.671	9	23	23_9	40
+-0.052	0.107	NA	2014	Matemáticas	Control	NA	9	23	23_9	40
+0.040	0.749	NA	2015	Lenguaje	Bruto	NA	5	23	23_5	39
+0.225	0.051	NA	2015	Lenguaje	Control	NA	5	23	23_5	39
+0.296	0.000	0.296	2015	Matemáticas	Bruto	0.496	5	23	23_5	39
+0.470	0.000	0.470	2015	Matemáticas	Control	0.670	5	23	23_5	39
+-0.644	0.000	-0.644	2015	Lenguaje	Bruto	-0.844	9	23	23_9	40
+-0.138	0.000	-0.138	2015	Lenguaje	Control	-0.338	9	23	23_9	40
+-0.198	0.000	-0.198	2015	Matemáticas	Bruto	-0.398	9	23	23_9	40
+0.173	0.000	0.173	2015	Matemáticas	Control	0.373	9	23	23_9	40
+-0.543	0.000	-0.543	2013	Lenguaje	Bruto	-0.743	9	24	24_9	41
+0.030	0.308	NA	2013	Lenguaje	Control	NA	9	24	24_9	41
+-0.176	0.000	-0.176	2013	Matemáticas	Bruto	-0.376	9	24	24_9	41
+0.122	0.000	0.122	2013	Matemáticas	Control	0.322	9	24	24_9	41
+-0.638	0.000	-0.638	2014	Lenguaje	Bruto	-0.838	9	24	24_9	41
+0.042	0.173	NA	2014	Lenguaje	Control	NA	9	24	24_9	41
+-0.226	0.000	-0.226	2014	Matemáticas	Bruto	-0.426	9	24	24_9	41
+0.136	0.000	0.136	2014	Matemáticas	Control	0.336	9	24	24_9	41
+-0.370	0.000	-0.370	2015	Lenguaje	Bruto	-0.570	9	24	24_9	41
+0.003	0.902	NA	2015	Lenguaje	Control	NA	9	24	24_9	41
+-0.095	0.011	-0.095	2015	Matemáticas	Bruto	-0.295	9	24	24_9	41
+0.261	0.000	0.261	2015	Matemáticas	Control	0.461	9	24	24_9	41
+0.291	0.000	0.291	2013	Lenguaje	Bruto	0.491	5	25	25_5	42
+0.490	0.000	0.490	2013	Lenguaje	Control	0.690	5	25	25_5	42
+0.203	0.000	0.203	2013	Matemáticas	Bruto	0.403	5	25	25_5	42
+0.376	0.000	0.376	2013	Matemáticas	Control	0.576	5	25	25_5	42
+-0.566	0.000	-0.566	2013	Lenguaje	Bruto	-0.766	9	25	25_9	43
+0.027	0.313	NA	2013	Lenguaje	Control	NA	9	25	25_9	43
+-0.476	0.000	-0.476	2013	Matemáticas	Bruto	-0.676	9	25	25_9	43
+-0.026	0.330	NA	2013	Matemáticas	Control	NA	9	25	25_9	43
+0.298	0.000	0.298	2014	Lenguaje	Bruto	0.498	5	25	25_5	42
+0.530	0.000	0.530	2014	Lenguaje	Control	0.730	5	25	25_5	42
+0.343	0.000	0.343	2014	Matemáticas	Bruto	0.543	5	25	25_5	42
+0.462	0.000	0.462	2014	Matemáticas	Control	0.662	5	25	25_5	42
+-0.767	0.000	-0.767	2014	Lenguaje	Bruto	-0.967	9	25	25_9	43
+-0.022	0.423	NA	2014	Lenguaje	Control	NA	9	25	25_9	43
+-0.532	0.000	-0.532	2014	Matemáticas	Bruto	-0.732	9	25	25_9	43
+-0.037	0.209	NA	2014	Matemáticas	Control	NA	9	25	25_9	43
+0.426	0.001	0.426	2015	Lenguaje	Bruto	0.626	5	25	25_5	42
+0.368	0.003	0.368	2015	Lenguaje	Control	0.568	5	25	25_5	42
+0.663	0.000	0.663	2015	Matemáticas	Bruto	0.863	5	25	25_5	42
+0.641	0.000	0.641	2015	Matemáticas	Control	0.841	5	25	25_5	42
+-0.469	0.000	-0.469	2015	Lenguaje	Bruto	-0.669	9	25	25_9	43
+-0.003	0.897	NA	2015	Lenguaje	Control	NA	9	25	25_9	43
+-0.382	0.000	-0.382	2015	Matemáticas	Bruto	-0.582	9	25	25_9	43
+0.138	0.000	0.138	2015	Matemáticas	Control	0.338	9	25	25_9	43
+0.787	0.000	0.787	2013	Lenguaje	Bruto	0.987	5	26	26_5	44
+0.737	0.000	0.737	2013	Lenguaje	Control	0.937	5	26	26_5	44
+0.604	0.000	0.604	2013	Matemáticas	Bruto	0.804	5	26	26_5	44
+0.602	0.000	0.602	2013	Matemáticas	Control	0.802	5	26	26_5	44
+0.040	0.288	NA	2013	Lenguaje	Bruto	NA	9	26	26_9	45
+0.078	0.003	0.078	2013	Lenguaje	Control	0.278	9	26	26_9	45
+-0.033	0.304	NA	2013	Matemáticas	Bruto	NA	9	26	26_9	45
+0.037	0.151	NA	2013	Matemáticas	Control	NA	9	26	26_9	45
+0.832	0.000	0.832	2014	Lenguaje	Bruto	1.032	5	26	26_5	44
+0.737	0.000	0.737	2014	Lenguaje	Control	0.937	5	26	26_5	44
+0.726	0.000	0.726	2014	Matemáticas	Bruto	0.926	5	26	26_5	44
+0.704	0.000	0.704	2014	Matemáticas	Control	0.904	5	26	26_5	44
+-0.090	0.025	-0.090	2014	Lenguaje	Bruto	-0.290	9	26	26_9	45
+-0.016	0.570	NA	2014	Lenguaje	Control	NA	9	26	26_9	45
+-0.056	0.099	NA	2014	Matemáticas	Bruto	NA	9	26	26_9	45
+0.058	0.038	0.058	2014	Matemáticas	Control	0.258	9	26	26_9	45
+0.763	0.000	0.763	2015	Lenguaje	Bruto	0.963	5	26	26_5	44
+0.473	0.000	0.473	2015	Lenguaje	Control	0.673	5	26	26_5	44
+1.013	0.000	1.013	2015	Matemáticas	Bruto	1.213	5	26	26_5	44
+0.828	0.000	0.828	2015	Matemáticas	Control	1.028	5	26	26_5	44
+0.036	0.282	NA	2015	Lenguaje	Bruto	NA	9	26	26_9	45
+0.062	0.008	0.062	2015	Lenguaje	Control	0.262	9	26	26_9	45
+0.185	0.000	0.185	2015	Matemáticas	Bruto	0.385	9	26	26_9	45
+0.282	0.000	0.282	2015	Matemáticas	Control	0.482	9	26	26_9	45
+-0.628	0.000	-0.628	2013	Lenguaje	Bruto	-0.828	9	27	27_9	46
+0.053	0.053	NA	2013	Lenguaje	Control	NA	9	27	27_9	46
+-0.218	0.000	-0.218	2013	Matemáticas	Bruto	-0.418	9	27	27_9	46
+0.099	0.000	0.099	2013	Matemáticas	Control	0.299	9	27	27_9	46
+-0.733	0.000	-0.733	2014	Lenguaje	Bruto	-0.933	9	27	27_9	46
+0.051	0.084	NA	2014	Lenguaje	Control	NA	9	27	27_9	46
+-0.159	0.000	-0.159	2014	Matemáticas	Bruto	-0.359	9	27	27_9	46
+0.183	0.000	0.183	2014	Matemáticas	Control	0.383	9	27	27_9	46
+-0.409	0.000	-0.409	2015	Lenguaje	Bruto	-0.609	9	27	27_9	46
+0.068	0.006	0.068	2015	Lenguaje	Control	0.268	9	27	27_9	46
+-0.067	0.080	NA	2015	Matemáticas	Bruto	NA	9	27	27_9	46
+0.280	0.000	0.280	2015	Matemáticas	Control	0.480	9	27	27_9	46
+",
+header=TRUE)
+
+## show data
+
+data_1
+dplyr::glimpse(data_1)
+
+## select figure
+figure <- 46
+
+## select data
+data_1 <- dplyr::filter(data_1, fig==figure)
+data_1
+
+# save data
+location <- '/Users/d/Dropbox (Personal)/_icfes/_producto_b/03_plot/'
+openxlsx::write.xlsx(data_1, file = paste0(location, "fig_",figure,".xlsx"))
+
+
+# make plot
+
+## Library gplot2 
+library(ggplot2)
+
+## change factor order
+is.factor(data_1$year)
+is.factor(data_1$tipo)
+is.factor(data_1$prueba)
+
+data_1$year=factor(data_1$year, levels=c('2015', '2014', '2013'))        # order bar graphs
+data_1$tipo=factor(data_1$tipo,levels=c('Control','Bruto'))              # order bar graphs
+data_1$prueba=factor(data_1$prueba, levels=c('Matemáticas', 'Lenguaje')) # order bar graphs
+
+
+# ------------------------------------------------------------------ final model with limit in the x axis
+
+## graph code
+p <- ggplot(data_1, aes(fill=tipo, y=coef, x=year))                   # basic layer
+p + geom_bar(position="dodge", stat="identity", colour="black") +         # graph bar
+facet_wrap( "prueba") +                                                   # wrapper for groups
+coord_flip( ylim = c(-2.7,2.7)) +                                         # horizontal bars and x limits
+scale_fill_manual(                                                    # defining legend
+	values=c("#01BAEF", "#757575"),                                       # colour fill for bar graphs
+	name="",                                                          # defined legend title
+    labels=c("Después de considerar NSE", "Antes de considerar NSE")) +   # legend labels
+theme(legend.position="bottom") +                                     # legen position
+guides(fill = guide_legend(reverse = TRUE)) +                             # fix order of legend components
+theme(                                                                # change theme elements
+	legend.text=element_text(size=rel(1)),                                # legend text size
+	panel.background = element_rect(fill = "#DBDBE0",                     # panel background
+                                colour = "#DBDBE0",                       # panel border line
+                                size = 0.5,                               # panel border line size
+                                linetype = "solid"),                      # panel border line type
+	panel.grid.major = element_line(size = 0.25, linetype = "dotted",     # panel grid lines size and type
+                                colour = "#01BAEF"),                      # panel grid lines colour
+	panel.grid.minor = element_line(size = 0.25, linetype = "dotted",     # panel grid lines size and type
+                                colour = "#01BAEF"),                      # panel grid lines colour
+	strip.text.x = element_text(size=9, face="bold"),                     # wrapper border
+	strip.background = element_rect(colour="#DBDBE0", fill="#DBDBE0"),    # wrapper background
+  	axis.ticks = element_blank() ) +                                      # axis ticks
+ylab("Coeficientes Significativos al 5%") +                          # y label
+theme(axis.title.y = element_text(size = rel(1), angle = 90)) +      # x axis, in flip, text size
+xlab("")  +                                                          # no text in y axis
+geom_text(                               # numeric labels per bar                                    
+	aes(y = position,                            # it positions the number label after the bar
+		label = round(coef, digits = 2)),        # it gives the number label a numeric format of 2 digits
+	    position = position_dodge(1), size = 3)  # it avoids overlapping 
+
+# save plot
+location <- '/Users/d/Dropbox (Personal)/_icfes/_producto_b/03_plot/'
+ggsave(file=paste0(location,"fig_",figure,".png"), width = 8, height = 5)
+
+
+

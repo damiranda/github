@@ -1,0 +1,274 @@
+---
+title: " Desigualdad, educación ciudadana y actitudes hacia inmigrantes: el caso chileno."
+author: "Daniel Miranda & Juan Carlos Castillo"
+date: "22 de noviembre de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Resumen
+
+
+La inclusión de grupos socialmente desaventajados representa un desafío para las democracias contemporáneas, en al menos dos formas. Primero, es claro que la desigualdad social afecta la participación de todos los grupos sociales en el espacio público, así como también, la manera en que los grupos aventajados incorporan y perciben a las minorías. Segundo, el sistema escolar tiene como objetivo explícito y desafío la socialización política de las nuevas generaciones para avanzar en el desarrollo de la convivencia democrática.  Esto es particularmente relevante países que han recibido un influjo creciente de migrantes, como es el caso chileno.
+ 
+Asumiendo que las actitudes hacia las minorías son en gran parte aprendidas durante el proceso de socialización escolar, este articulo explora las diferencias individuales en cuanto a actitudes hacia migrantes por parte de estudiantes chilenos de octavo básico. El foco general es evaluar la influencia de las desigualdades de origen sobre las actitudes hacia migrantes y el rol que la adquisición de conocimientos cívicos puede jugar en esta relación. Específicamente, se proponen tres objetivos. Primero, estimar los niveles de actitudes favorables o desfavorables hacia población inmigrante en dos momentos, los años 2008 y 2015. Segundo, evaluar el rol de las características socioeconómicas familiares sobre las actitudes hacia población migrante. Finalmente, se propone evaluar el rol de la socialización política escolar hacia la formación de actitudes hacia migrantes, más allá de las características familiares.
+ 
+Los datos analizados fueron obtenidos del Estudio Internacional de Educación Cívica y Ciudadana (ICCS), que fue coordinado por la Asociación Internacional para la Evaluación y el Logro Educativo (IEA). EL estudio ICCS fue aplicado en los años 2009 y 2016, con una muestra de más de 140.000 y 90.000 estudiantes DE 8vo grado provenientes de 38 y 24 países, respectivamente. El análisis considera a Chile, país que participó en ambas mediciones con alrededor de 5000 casos. Al igual que en todos los países considerados en el estudio, la muestra chilena fue seleccionada siguiendo un procedimiento que asegura representatividad de la población escolar.  
+ 
+La variable dependiente de este estudio corresponde a la medición de una actitud de los jóvenes participantes hacia inmigrantes. Específicamente se les preguntó a los estudiantes: “Considerando varios grupos sociales, entre ellos, personas de provenientes de otro país, a los jóvenes participantes se les preguntó *¿qué tanto te agradaría o desagradaría tener de vecinos a personas que pertenecen a los siguientes grupos?* en 2009 y si “¿te molesta tener vecinos que pertenecen a los siguientes grupos?” en 2016. Para evaluar las características socioeconómicas de la familia se utilizaron dos variables: nivel educacional de los padres y el número de libros disponibles en el hogar. El nivel educacional es medido como el mayor nivel educacional de alguno de los padres o cuidadores del niño, utilizando la Clasificación Internacional Normalizada de Educación. Los libros en el hogar consideran una escala de libros que los jóvenes declaran tener en su hogar. Respecto de educación cívica se utilizó una escala que evalúa el nivel de conocimiento cívico que los jóvenes tienen. Este puntaje es una estimación IRT que se obtiene de una prueba estandarizada que contiene 79 itemes. La escala internacional se estima en un promedio de 500 y una desviación estándar de 100. Dadas las características de los datos, una serie de descriptivos y modelos multinivel fueron estimados.
+ 
+Los resultados principales muestran que entre 2008 y 2015 se produce un aumento en el grado de intolerancia hacia los migrantes a nivel de población escolar. Adicionalmente, se observa que los jóvenes provenientes de familias con menores niveles educacionales están menos dispuestos a vivir con migrantes como vecinos. Finalmente, estudiantes que obtienen mayores niveles de conocimiento cívico se muestran más tolerantes a la convivencia con personas de otras nacionalidades. Estos resultados abren la discusión sobre las implicancias para la socialización familiar y escolar en chile y sus potenciales impactos en la integración social de migrantes.  
+
+
+ 
+*Assuming that attitudes toward immigrants are at least partly learned during the political socialization of school-age children, this paper explores individual differences in attitudes toward immigrants. The general aim of this paper is to assess the influence of the socioeconomic background on student’s attitudes towards immigrants. The specific objectives are three. First, to estimate the rates of attitudes toward immigrants in Chile. Second, to evaluate the association among socioeconomic characteristics of families with attitudes toward immigrants. And third, to evaluate the role of the school in the socialization of attitudes toward immigrants. 
+The analyzed data was obtained from the International Civic and Citizenship Study (ICCS). This study was applied on two different cohorts in 2009 and 2016. Participants were eight-grade student's sample from Chile. Given a nested design characteristic of the study, multilevel structural equation model was estimated. General results indicate an increase of intolerance in 2016. Additionally, indicates that students that came from less educated families are less willing leave with immigrants on their neighbors. Finally, students that obtain higher level of civic knowledge are more tolerant with the immigration. The implications for attitudinal socialization are discussed*. 
+
+## Introducción
+# Educación y Migración
+
+## Datos, variables y método
+
+Los datos analizados fueron obtenidos del Estudio Internacional de Educación Cívica y Ciudadana (ICCS), que fue coordinado por la Asociación Internacional para la Evaluación y el Logro Educativo (IEA). EL estudio ICCS fue aplicado en los años 2009 y 2016, con una muestra de más de 140.000 y 90.000 estudiantes DE 8vo grado provenientes de 38 y 24 paises, respectivamente (Schulz, Ainley, Fraillon, Kerr, & Losito, 2010). El análisis considera a Chile, país que participó en ambas mediciones. Al igual que en todos los paises considerados en el estudio, la muestra chilena fue seleccionada siguiendo un procedimiento que asegura representatividad de la población escolar. 
+
+La variable dependiente de este estudio corresponde a la medición de una actitud de los jóvenes participantes hacia inmigrantes. Especificamente se les preguntó a los estudiantes: **Considerando varios grupos sociales, entre ellos, personas de provenientes de otro país, a los jóvenes participantes se les preguntó *¿qué tanto te agradaría o desagradaría tener de vecinos a personas que pertenecen a los siguientes grupos?* en 2009 y si *¿te molesta tener vecinos que pertenecen a los siguientes grupos?* en 2016**. Para evaluar las carcaterísticas socioeconómicas de la familia se utilizaron dos variables: nivel educacional de los padres y el número de libros disponibles en el hogar. El nivel educacional es medido como el mayor nivel educacional de alguno de los padres o cuidadores del niño, utilizando la Clasificación Internacional Normalizada de Educación (CINE, 2015). Los libros en el hogar consideran una escala de libros que los jóvenes declaran tener en su hogar. Respecto de educación cívica se utilizó una escala que evalúa el nivel de conocimiento cívico que los jóvenes tienen. Este puntaje es una estimación IRT que se obtiene de una prueba estandarizada que contiene 79 itemes. La escala internacional se estima en un promedio de 500 y una desviación estadar de 100. 
+
+
+## Resultados
+Los resultados se organizan en tres subsecciones. Primero, una sección descriptiva 
+
+```{r , eval=TRUE, results='asis', echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+pacman::p_load(knitr, haven, foreing, ggplot2, reshape, plyr, dplyr, readstata13, VIM, stringr, skimr, xaringan, srvyr, lme4, broom, texreg, mediate, psych, MBESS, MplusAutomation)
+````
+
+
+```{r , eval=TRUE, echo=FALSE, warning=FALSE, tidy=TRUE}
+##Directorio para imagenes
+
+iccs16=read.dta13("C:/Users/DM/Dropbox (MIDE)/GEMR 2019/Data/Merge/ICCS_School_Teachers_Students_Europe_LA.dta", convert.factors = FALSE)
+
+iccs09=read.dta13("C:/Users/DM/Dropbox (MIDE)/mesa educacion ciudadana/IEA studies/ICCS/Internacional/LA_ICCS.dta", convert.factors = FALSE)
+
+
+
+#iccs=haven::read_dta("C:/Users/DANIEL/Dropbox/MIDEUC/Corruption and trust/ICCS2016.dta")
+
+## Explorar la base
+
+    #class(iccs)
+    #dim(iccs)
+    #head(iccs)
+    #str(iccs)
+    
+    #names(iccs09)
+    #names(iccs16)
+    
+    #dplyr::glimpse(iccs09) # ver estructura general
+    
+    la16= iccs16 %>%
+      rename_all(tolower) %>%
+      mutate(LA = ifelse(country == "CHL", "LA", ifelse(country == "COL", "LA", ifelse(country == "DOM", "LA", ifelse(country == "MEX", "LA", ifelse(country == "PER", "LA", "NOLA")))))) %>%
+      rowwise() %>% 
+      dplyr::mutate(study="16") %>%
+      dplyr::mutate (color= ifelse(ls3g06a==2, 0, 1)) %>%
+      dplyr::mutate (clase= ifelse(ls3g06b==2, 0, 1)) %>%
+      dplyr::mutate (credo= ifelse(ls3g06c==2, 0, 1)) %>%
+      dplyr::mutate (region= ifelse(ls3g06d==2, 0, 1)) %>%
+      dplyr::mutate (dfisica= ifelse(ls3g06e==2, 0, 1)) %>%
+      dplyr::mutate (dmental= ifelse(ls3g06f==2, 0, 1)) %>%
+      dplyr::mutate (pais= ifelse(ls3g06g==2, 0, 1)) %>%
+      dplyr::mutate (indig= ifelse(ls3g06h==2, 0, 1)) %>%
+      dplyr::mutate (civic= mean(c(pv1civ, pv2civ, pv3civ, pv4civ, pv5civ))) %>%
+      dplyr::mutate (civic200= (pv1civ /200)) %>%
+      dplyr::mutate (univ= ifelse(s_hisced>3, 1, 0)) %>%
+      dplyr::filter(LA=="LA") %>%
+      dplyr::select(idcntry, country, idschool, idstud, totwgts, wgtfac1, wgtadj1s, wgtfac2s, wgtadj2s, wgtadj3s, jkzones, jkreps, pv1civ, pv2civ, pv3civ, pv4civ, pv5civ, civic, s_intrust, s_opdisc, s_hisced, s_hisei, s_homlit, s_gender, s_citcon, s_citsoc, s_citresp, s_citeff, s_cntatt, s_abuse, s_civlrn, s_geneql, s_ethrght, l_attviol, l_attdiv, l_autgov, l_attcorr, l_dislaw, l_empclas, study, s_poldisc, color, clase, credo, region, dfisica, dmental, pais, indig, s_immig, univ, LA)
+    
+    #print
+    #names(la16)
+    #skim(la16)
+
+################
+ #la16 %>% 
+#      group_by(country) %>%
+#      skimr::skim(c(pais))
+    
+````
+
+### 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+    la09= iccs09 %>%
+      rowwise() %>%
+      rename_all(tolower) %>%
+      dplyr::mutate(study="09") %>%
+      dplyr::mutate (civic= mean(c(pv1civ, pv2civ, pv3civ, pv4civ, pv5civ))) %>%
+      dplyr::mutate (s_intrust= intrust) %>%
+      dplyr::mutate (s_opdisc= opdisc) %>%
+      #dplyr::mutate (s_hisced= hisced) %>%
+      dplyr::mutate(s_hisced=recode(hisced,"0"=0, "1"=0, "2"=1, "3"=2, "4"=3, "5"=4))%>%
+      #mutate(s_hisced = ifelse(hisced == "0", "0", ifelse(hisced == "1", "0", ifelse(hisced == "2", "1", ifelse(hisced == "3", "2", ifelse(hisced == "4", "3", ifelse(hisced == "5", "4", ""))))))) %>%
+      dplyr::mutate (s_hisei= hisei) %>%
+      dplyr::mutate (s_homlit= homelit) %>%
+      dplyr::mutate (s_gender= sgender) %>%
+      dplyr::mutate (s_citcon= citcon) %>%
+      dplyr::mutate (s_citsoc= citsoc) %>%
+      dplyr::mutate (s_citeff= citeff) %>%
+      dplyr::mutate (s_cntatt= attcnt) %>%
+      dplyr::mutate (s_geneql= geneql) %>%
+      dplyr::mutate (s_ethrght= ethrght) %>%
+      dplyr::mutate (l_attviol= attviol) %>%
+      dplyr::mutate (l_attdiv= attdiff) %>%
+      dplyr::mutate (l_autgov= autgov) %>%
+      dplyr::mutate (l_attcorr=attcorr) %>%
+      dplyr::mutate (l_dislaw= dislaw) %>%
+      dplyr::mutate (l_empclas= empath) %>%
+      dplyr::mutate (s_poldisc= poldisc) %>%
+      dplyr::mutate (s_immig= immig) %>%
+      dplyr::mutate (color= ifelse(ls2p06a==3, 1, 0)) %>%
+      dplyr::mutate (clase= ifelse(ls2p06b==3, 1, 0)) %>%
+      dplyr::mutate (credo= ifelse(ls2p06c==3, 1, 0)) %>%
+      dplyr::mutate (homo= ifelse(ls2p06d==3, 1, 0)) %>%
+      dplyr::mutate (region= ifelse(ls2p06e==3, 1, 0)) %>%
+      dplyr::mutate (dfisica= ifelse(ls2p06f==3, 1, 0)) %>%
+      dplyr::mutate (dmental= ifelse(ls2p06g==3, 1, 0)) %>%
+      dplyr::mutate (pais= ifelse(ls2p06h==3, 1, 0)) %>%
+      dplyr::mutate (vih= ifelse(ls2p06i==3, 1, 0)) %>%
+      dplyr::mutate (indig= ifelse(ls2p06j==3, 1, 0)) %>%
+      dplyr::mutate (univ= ifelse(s_hisced>3, 1, 0)) %>%
+      dplyr::select(idcntry, country, idschool, idstud, totwgts, wgtfac1, wgtadj1s, wgtfac2s, wgtadj2s, wgtadj3s, jkzones, jkreps, pv1civ, pv2civ, pv3civ, pv4civ, pv5civ, civic, s_intrust, s_opdisc, s_hisced, s_hisei, s_homlit, s_gender, s_citcon, s_citsoc, s_citeff, s_cntatt, s_geneql, s_ethrght, expagg, l_attviol, l_attdiv, l_autgov, l_attcorr, l_dislaw, l_empclas, study, s_poldisc, color, clase, credo, region, dfisica, dmental, pais, indig, homo, vih, s_immig, univ) 
+    
+    #print
+    #names(la09)  
+  #  skim(la09)
+
+################
+# la09 %>% 
+#      group_by(country) %>%
+#     skimr::skim(c(s_hisced))
+      
+    
+
+    mergeiccs=full_join(la16, la09)
+````
+
+## Rechazo a personas migrantes como vecinos, año 2009 y 2016.
+
+ 
+
+```{r, echo=FALSE, warning=FALSE}
+        mergesvy <-  mergeiccs %>%
+        filter(country=="CHL") %>%
+        as_survey_design(
+        strata = jkzones, 
+        weights = totwgts, 
+        ids = jkreps, 
+        nest = TRUE)
+
+    # frequency table via taylor series linearization
+      table_freq_01 <- mergesvy %>%
+        group_by(study) %>%
+        summarise(promedio = survey_mean(pais,na.rm=TRUE, prop_method="mean"))
+      
+  
+      #help(srvyr)
+      
+      # display table only
+      #knitr::kable(table_freq_01, digits = 4)
+      
+      df=data.frame(table_freq_01, digits=2)
+    
+      #summary(factor(df$proportion))
+      
+      df= df %>%
+        mutate(mean = promedio * 100) %>%
+        mutate(meanr=round(mean, 2))%>%
+        mutate(label=factor(study, labels=c("2009= 2,73%", "2016= 6,80%"))) 
+      
+      #df <- data.frame(trt = c("a", "b", "c", "d"), outcome = c(0.136, 0.212, 0.477, 0.176), study=c(09, 09, 09, 09))
+      
+      migra_chile=ggplot(df, aes(label, meanr))+
+        geom_bar(stat="identity", color="black")+
+        #facet_wrap(~ study)+
+        # scale_fill_grey()+
+       # geom_text(aes(label=label), vjust=1.6, color="white", size=3.5)+
+       # geom_text(aes(label = label), position = position_dodge(0.3), vjust=-0.1)+
+       # theme(axis.text.x = element_text(angle =45, hjust = 1)) +
+        ggtitle("¿Te molesta tener vecinos que pertenecen a los siguientes grupos?") +
+        labs(x = "Personas que vienen de otro país", y = "%") +
+        geom_col()+
+        scale_fill_manual(values=c('black','lightgray'))+
+        theme_classic()
+      
+       print(migra_chile)
+````
+El resultado indica que en 2009, sólo un 2,73% de los jóvenes chilenos declara que le desagradaría tener como vecino a una persona de otro país. En 2016 aumentó a un 6,8% el porcentaje de estudiantes que declara molestía por tener un vecino de otro país. 
+
+
+## Rechazo a personas migrantes como vecinos, según el nivel educacional de sus padres.
+
+```{r, echo=FALSE, warning=FALSE}
+        mergesvy <-  mergeiccs %>%
+        filter(country=="CHL") %>%
+        as_survey_design(
+        strata = jkzones, 
+        weights = totwgts, 
+        ids = jkreps, 
+        nest = TRUE)
+
+    # frequency table via taylor series linearization
+      table_freq_02 <- mergesvy %>%
+        group_by(study, s_hisced) %>%
+        summarise(promedio = survey_mean(pais,na.rm=TRUE, prop_method="mean"))
+    
+      #table_freq_02
+  
+      #help(srvyr)
+      
+      # display table only
+      #knitr::kable(table_freq_01, digits = 4)
+      
+      df=data.frame(table_freq_02, digits=2)
+    
+      #summary(factor(df$proportion))
+      
+      df= df %>%
+        mutate(mean = promedio * 100) %>%
+        mutate(meanr=round(mean, 2))%>%
+        mutate(edu=factor(s_hisced, labels=c("Básica Inc", "Básica", "Media", "Técnica", "Superior"))) 
+      
+      #df <- data.frame(trt = c("a", "b", "c", "d"), outcome = c(0.136, 0.212, 0.477, 0.176), study=c(09, 09, 09, 09))
+      
+      migra_edu=ggplot(df, aes(edu, meanr))+
+        geom_bar(stat="identity", color="black")+
+        facet_wrap(~ study)+
+        # scale_fill_grey()+
+       # geom_text(aes(label=label), vjust=1.6, color="white", size=3.5)+
+       # geom_text(aes(label = label), position = position_dodge(0.3), vjust=-0.1)+
+       # theme(axis.text.x = element_text(angle =45, hjust = 1)) +
+        ggtitle("¿Te molesta tener vecinos que pertenecen a los siguientes grupos?") +
+        labs(x = "Personas que vienen de otro país", y = "%") +
+        geom_col()+
+        scale_fill_manual(values=c('black','lightgray'))+
+        theme_classic()
+      
+       print(migra_edu)
+````
+
+## Rechazo a personas migrantes como vecinos, según el nivel de conocimiento cívico.
+
+```{r, echo=FALSE, warning=FALSE}
+    migra_civic=ggplot(mergeiccs, aes(x = civic, y = pais, size = totwgts)) + 
+     facet_wrap(~ study)+
+ # geom_point(shape = 21) +
+  geom_smooth(method = "lm", mapping = aes(weight = totwgts))+
+     ggtitle("Disposición a aceptar a personas migrantes como vecinos") +
+        labs(x = "Conocimiento cívico", y = "% de desagrado") +
+    theme_classic()
+    
+    print(migra_civic)
+````
+

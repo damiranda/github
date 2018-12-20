@@ -1,0 +1,16 @@
+df <- data.frame(
+  Sexo = factor(c("Hombre", "Mujer" )),
+  Logro = c(48.85, 51.02),
+  Intervalo = c(0.38, 0.31)
+)
+
+
+math <- ggplot(df, aes(Sexo, Logro, colour=Sexo)) + 
+  geom_col() +  
+  geom_errorbar(aes(ymin = Logro - Intervalo, ymax = Logro + Intervalo), width=0.2)
+math + labs(y="Logro en matemáticas", x = "Sexo") + theme_classic()
+
+math <- ggplot(df, aes(Sexo, Logro, colour=Sexo)) + 
+  geom_point() +  
+  geom_errorbar(aes(ymin = Logro - Intervalo, ymax = Logro + Intervalo), width=0.2)
+math + labs(y="Logro en matemáticas", x = "Sexo") + theme_classic()

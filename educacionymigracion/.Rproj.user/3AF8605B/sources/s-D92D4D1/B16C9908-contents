@@ -1,0 +1,481 @@
+---
+title: "Actitudes anti-democráticas en la escuela"
+subtitle: "¿Tiene la escuela algo que hacer?"
+author:
+- Daniel Miranda, Ph.D. Centro de Medición MIDE UC, Centro para el Estudio del Conflito y la Cohesión Social COES
+- Juan Carlos Castillo, Ph.D. Instituto de Sociología ISUC, Centro para el Estudio del Conflito y la Cohesión Social COES.
+
+abstract: |
+#Esta nota de COES de política publica aborda el apoyo que otrogan los jóvenes chilenos a dictadura como forma de gobierno y su asocación con educación para la ciudadanía en dos momentos 1999 y 2009. El objetivo es doble, por un lado, evaluar que 
+
+keywords: Political Socialization, Anti-democractic values, ICCS 2009-2016.
+date: Julio de 2018
+output: html_document
+---
+  
+## Introducción
+
+Chile sin duda ha sido considerado una democracia estable durante las últimas dos decadas, aunque con signos recientes de desgaste y dudas sobre su legitimidad. Estudios de opinión pública - como Latinobarometro o LAPOP- indican que una alta proporción de ciudadanos chilenos se muestran escépticos a la democracia como forma de gobierno. También se observa una creciente disminucion de los niveles de aprobación de las instituciones en general, que se manifiesta con particular fuerza en las instituciones políticas. Adicionalmente, el interés en la política y las tasas de participación electoral muestran una dismunución que se concentra sobretodo en población juvenil (Contreras-Aguirre & Morales-Quiroga, 2014; Corvalan & Cox, 2013; Roberto Mardones, 2014; MINEDUC, 2004; Toro, 2007). Este contexto se suma a que Chile arrastra en su historia 18 años de dictadura que cada cierto tiempo reaparecen en la discusíon pública por diversas razones: la conmemoración anual del Golpe de Estado, el resultado de algún estudio que muestra las debilidades democráticas del país y/o la noticia que algún país de America Latina ha mostrado (otra vez) características de dictadura. Todos estos elementos configuran un escenario que genera una serie de interrogantes acerca de las condiciones de la democracia chilena, entre ellas ¿estamos experimentando una crisis de apoyo a la democracia?¿es Chile un país libre de virar hacia un gobierno autoritario? ¿en qué memdida la población chilena estaría dispuesta a apoyar una dictadura?
+
+La preocupación por el futuro de la democracia y diágnostico acerca de los jóvenes desafectados del vida política, ha volcado la mirada hacia la escuela y su responsabilidad en la formación de futuros ciudadanos. En la formación para la ciudadanía se despositan las mayores expectativas respecto de la promoción de los valores democráticos y la disminución de aquellas que pueden atentar contra la democracia misma. La principal crítica que surge al respecto en el país se focaliza en la “falta de educación cívica”, la que se asocia en el sentido común a la supresión de la asignatura en la reforma curricular del año 1998. En contraste, la prescripción curricular ha evolucionado de modo consistente hacia su enriquecimiento que se ha traducido en mayores oportunidades de aprendizaje efectivas sobre ciudadanía (Bonhomme, Cox, Tham, & Lira, 2015; Cristian Cox & García, 2015; R. Mardones, Cox, Farías, & García, 2015). Por otro lado, el bajo rendimiento de Chile en el Estudio Internacional de Educación Cívica CIVED del año 1999 generó preocupación y se convocó a una comisión presidencial que el año 2004 realizó una serie de propuestas respecto a la formación ciudadana. Uno de los principales avances en este ámbito ha sido la incorporación de la Participación y Vida Democrática como uno de los ocho “Otros Indicadores de la Calidad” (OIC) (MINEDUC, 2014), que se suman a SIMCE en la evaluación del desempeño escolar desde el año 2014. Sin embargo, no es hasta la proliferación de casos de corrupción y de falta de transparencia en el ámbito político desde el año 2014 que se genera el impulso necesario para poder abordar legislativamente el tema de la formación ciudadana, presente como una de las propuestas del “Consejo asesor presidencial contra los conflictos de interés, el tráfico de influencias y la corrupción”, y que se plasma en el proyecto de ley del “Plan de Formación Ciudadana y Derechos Humanos para Establecimientos Educacionales reconocidos por el Estado. El año 2016 se promulgó esta ley que mandata a los establecimientos educacionales a desarrollar un Plan de Formación Ciudadana (PFC) que considere todos los niveles educativos. Además, esta ley crea la asigantura de Formación Ciudadana para tercero y cuarto medio. Por esta vía se genera una expectativa amplia respecto de la preparación que se espera tengan los jóvenes chilenos para participar del espacio público, o dicho en palabras que indica el proyecto del ley: 
+*"Los establecimientos educacionales reconocidos por el Estado deberán incluir en los niveles de enseñanza parvularia, básica y media un Plan de Formación Ciudadana, que integre y complemente las definiciones curriculares nacionales en esta materia, que brinde a los estudiantes la preparación necesaria para asumir una vida responsable en una sociedad libre y dé orientación hacia el mejoramiento integral de la persona humana, como fundamento del sistema democrático, la justicia social y el progreso. Asimismo, deberá propender a la formación de ciudadanos, con valores y conocimientos para fomentar el desarrollo del país, con una visión del mundo centrada en el ser humano, como parte de un entorno natural y social."*
+
+En este contexto, la identificación de aquellas características, estrategias de formación y/o actividades orientadas a la formación ciudadana realizadas en la escuela resultan clave para sopesar estas expectativas. La evidencia general muestra dos caras. Por un lado, se ha difundido ampliamente que un clima abierto a la discusión en las salas de clases es una manera de mojorar las capacidades democráticas de los jóvenes (Knowles, Torney-Purta y Barber, 2018; Castillo, Miranda y Carrasco, 2014). Por otro lado,   
+
+Este documento se propone abordar una dimensión referida a la legitimidad democrática, la expresión apoyo a una dictadura en población juvenil. Utilizando los resultados del Estudio Intenacional de Educación Cívica y Ciudadana ICCS de los años 2009 y 2016, aplicado a estudiantes chilenos de 8vo básico:
+- se describe el nivel de apoyo de los estudiantes a una dictadura.
+- se evalúa la relación entre el nivel de conocimiento cívico y el apoyo a una dictadura, y 
+- se evalúa la relación entre algunas prácticas escolares que pueden mejorar el conocimiento y disminuir el apoyo a una dictadura.
+
+## Legitimidad de la democracia
+
+La legitimidad de la democracia descansa el apoyo de los ciudadanos un sistema de creencias consistente la institucionalidad política existente (Lipset, 1969). Esto implica que la sociedad debe ser capaz de "engendrar y mantener" creencias consisntentes con esta forma de gobierno y también disminuir aquellas creencias inconsistentes. En esa línea, el apoyo apoyo a valores autoritarios o la justificación de una dictadura pueden ser considerados como creencias que amenazan la legitimidad de una democracia.
+
+Diversos paises de America Latina tienen en su historia reciente algún episodio considerado como una ruptura del estado democrático o francamente una dictadura. Esta inestabilidad de las democracias latinoamericanas radica en una tendencia a devaluar "un sistema de valores que permite el 'juego' pacífico del poder - la adherencia de los 'externos' a las desiciones de los 'internos' y el reconocimiento por parte de los 'internos' de los derechos de los 'externos'" (Lipset, 1959).
+
+Chile también arrastra este estigma, lo que se refleja en que una parte de la población manifieste algún de apoyo al autoritarismo. El Informe de Desarrollo Humano en Chile del año 2015 muestra que, aunque ha disminuido, una proporción importante de chilenos (un 19% en 1999 y 15% en 2013) consideran que "en algunas circunstancias es preferible un gobierno auoritario que uno democrático" y que "a la gente como uno le da lo mismo un gobierno democrático que uno autoritario" (un 31% en 1999 y 14% en 2013). Mediciones más recientes hechas por COES, Latinobarometro y LAPOP indican que alreddedor de un 30% de la población manifiesta indiferencia o preferencia por un gobierno autoritario. 
+
+En las nuevas generaciones se alberga regularmente la esperanza que renovarán la política y la democracia. Sin embargo, ha sido motivo de discusión en los últimos año las diversas formas de desafección política que muestra la población juvenil. 
+
+observada en la baja participación electoral y los bajos niveles de confianza institucional que presentan. 
+
+Formación para la ciudadanía. El rol de la escuela.
+
+Para contribuir a este debate, tomemos en consideración algunos elementos adicionales. Primero, ICCS en su versión 2009 aplicó la misma pregunta sobre la dictadura/democracia a una muestra similar de estudiantes de 8vo básico. En esa ocasión, un 65% de ellos estuvo de acuerdo con la afirmación. Es decir, disminuyó un 8% el porcentaje de jóvenes que apoyaría una dictadura entre 2009 y 2016. Segundo, el mismo estudio ICCS evalúa el nivel de conocimiento cívico que tienen los estudiantes. Para ello utiliza una prueba que tiene un promedio internacional de 500 puntos (desviación estándar 100).
+
+### Apoyo a dictaduras y conocimiento cívico
+
+### ¿Qué puede hacer la escuela para incrementar el conocimiento cívico de sus estudiantes?
+
+###
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(dev = 'jpg')
+# remove all previous objects
+rm(list = ls()) 
+```
+
+
+
+```{r , eval=TRUE, results='asis', echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+pacman::p_load(haven, foreing, ggplot2, reshape, plyr, dplyr, readstata13, VIM, stringr, skimr, xaringan, srvyr, lme4, broom, texreg, scales, plotly, desctable, descriptr, forcats, GGally)
+````
+
+
+```{r , eval=TRUE, results='hide', echo=FALSE, warning=FALSE, tidy=TRUE, message=FALSE, error=FALSE}
+## Lectura de datos
+##Directorio para imagenes
+setwd("C:/Users/DANIEL/Dropbox/MIDEUC/Corruption and trust/figures")
+
+#iccs16=read.dta13("C:/Users/DANIEL/Dropbox/GEMR 2019/Data/Merge/ICCS_School_Teachers_Students_Europe_LA.dta", convert.factors = FALSE)
+
+#iccs09=read.dta13("C:/Users/DANIEL/Dropbox/mesa educacion ciudadana/IEA studies/ICCS/Internacional/LA_ICCS.dta", convert.factors = FALSE)
+
+iccs16=haven::read_dta("C:/Users/DANIEL/Dropbox/GEMR 2019/Data/Merge/ICCS_School_Teachers_Students_Europe_LA.dta")
+
+iccs09=haven::read_dta("C:/Users/DANIEL/Dropbox/mesa educacion ciudadana/IEA studies/ICCS/Internacional/LA_ICCS.dta")
+
+
+
+#iccs=haven::read_dta("C:/Users/DANIEL/Dropbox/MIDEUC/Corruption and trust/ICCS2016.dta")
+
+## Explorar la base
+
+    #class(iccs)
+    #dim(iccs)
+    #head(iccs)
+    #str(iccs)
+    
+    #names(iccs09)
+    #names(iccs16)
+    
+    #dplyr::glimpse(iccs09) # ver estructura general
+    
+    la16= iccs16 %>%
+      rename_all(tolower) %>%
+      mutate(LA = ifelse(country == "CHL", "LA", ifelse(country == "COL", "LA", ifelse(country == "DOM", "LA", ifelse(country == "MEX", "LA", ifelse(country == "PER", "LA", "NOLA")))))) %>%
+      dplyr::filter(LA=="LA") %>%
+      rowwise() %>% 
+      dplyr::mutate(study="ICCS 2016") %>%
+      dplyr::mutate (dicta1= 5- ls3g02d)%>%
+      dplyr::mutate (dicta2= 5 - ls3g02e)%>%
+      dplyr::mutate (dictadura= mean(c(dicta1, dicta2)))%>%
+      dplyr::mutate (univ= ifelse(s_hisced>2, 1, 0)) %>%
+      dplyr::mutate (civic= mean(c(pv1civ, pv2civ, pv3civ, pv4civ, pv5civ))) %>%
+      dplyr::group_by(idschool) %>%
+      dplyr::select(idcntry, country, idschool, idstud, totwgts, wgtfac1, wgtadj1s, wgtfac2s, wgtadj2s, wgtadj3s, jkzones, jkreps, pv1civ, pv2civ, pv3civ, pv4civ, pv5civ, civic, s_intrust, s_opdisc, s_hisced, s_hisei, s_homlit, s_gender, s_citcon, s_citsoc, s_citresp, s_citeff, s_cntatt, s_abuse, s_civlrn, s_geneql, s_ethrght, l_attviol, l_attdiv, l_atths, l_autgov, l_attcorr, l_dislaw, l_empclas, study, dicta1, dicta2, dictadura, univ, is3g22b, is3g22h, is3g22f, is3g22a, s_civlrn, s_sint, is3g10a)
+    
+    la16 %>% 
+      ds_screener()
+    #print
+    #names(la16)
+    #skim(la16)
+    #table(la16$ls3g02d, la16$ls3g02e)
+    #pacman::p_load(Hmisc)
+    #rcorr(la16$ls3g02d, la16$ls3g02b)
+    #
+ 
+    
+    
+    la09= iccs09 %>%
+      rowwise() %>%
+      dplyr::mutate(study="ICCS 2009") %>%
+      dplyr::mutate (civic= mean(c(pv1civ, pv2civ, pv3civ, pv4civ, pv5civ))) %>%
+      dplyr::mutate (s_intrust= intrust) %>%
+      dplyr::mutate (s_opdisc= opdisc) %>%
+      dplyr::mutate (s_hisced= ifelse(hisced==0,0,ifelse(hisced==1,0, ifelse(hisced==2, 1, ifelse(hisced==3, 2, ifelse(hisced==4, 3, ifelse(hisced==5, 4, NA))))))) %>%
+      dplyr::mutate (s_hisei= hisei) %>%
+      dplyr::mutate (s_homlit= homelit) %>%
+      dplyr::mutate (s_gender= sgender) %>%
+      dplyr::mutate (s_citcon= citcon) %>%
+      dplyr::mutate (s_citsoc= citsoc) %>%
+      dplyr::mutate (s_citeff= citeff) %>%
+      dplyr::mutate (s_cntatt= attcnt) %>%
+      dplyr::mutate (s_geneql= geneql) %>%
+      dplyr::mutate (s_ethrght= ethrght) %>%
+      dplyr::mutate (l_attviol= attviol) %>%
+      dplyr::mutate (l_attdiv= attdiff) %>%
+      dplyr::mutate (l_autgov= autgov) %>%
+      dplyr::mutate (l_attcorr=attcorr) %>%
+      dplyr::mutate (l_dislaw= dislaw) %>%
+      dplyr::mutate (l_empclas= empath) %>%
+      dplyr::mutate (s_sint=intpols) %>%
+      dplyr::mutate (dicta1= 5 - LS2P03D)%>%
+      dplyr::mutate (dicta2= 5 - LS2P03E)%>%
+      dplyr::mutate (dictadura= mean(c(dicta1, dicta2)))%>%
+      dplyr::mutate (univ= ifelse(s_hisced==4, 1, 0)) %>%
+      dplyr::select(idcntry, country, idschool, idstud, totwgts, wgtfac1, wgtadj1s, wgtfac2s, wgtadj2s, wgtadj3s, jkzones, jkreps, pv1civ, pv2civ, pv3civ, pv4civ, pv5civ, civic, s_intrust, s_opdisc, s_hisced, s_hisei, s_homlit, s_gender, s_citcon, s_citsoc, s_citeff, s_cntatt, s_geneql, s_ethrght, expagg, l_attviol, l_attdiv, l_autgov, l_attcorr, l_dislaw, l_empclas, study, dicta1, dicta2, dictadura, univ, s_sint) 
+      
+    
+    la09 %>% 
+      ds_screener()
+    #print
+    #names(la09)  
+    #skim(la09)
+    
+    mergeiccs=full_join(la16, la09)
+    
+    mergeiccs %>%
+      ds_screener()
+    
+    ##Subset of data
+    chile=mergeiccs %>%
+      filter(country=="CHL")%>%
+      select(civic, dictadura,dicta1, dicta2, l_attcorr, s_intrust, s_sint, univ, s_homlit, s_hisced, study, l_autgov, s_citcon, s_opdisc, s_civlrn, totwgts, wgtfac1, wgtadj1s, wgtfac2s, wgtadj2s, wgtadj3s, jkzones, jkreps, idschool, idstud, is3g10a)
+    
+      #chile %>%
+      #filter(study=="09")%>%
+      #group_by(is3g10a) %>%
+      #summarise (n = n()) %>%
+      #mutate(freq = n / sum(n))%>%
+      #print
+
+    #names(mergeiccs)
+    #View(merge)
+    #table(mergeiccs$univ)
+    #attr(mergeiccs$country, 'label')
+
+    #chile %>% 
+    #  group_by(study) %>%
+    #  ds_screener()
+    
+     # desctable(chile)
+      
+      
+      
+      #explo=mergeiccs %>%
+      #filter(country=="CHL")%>%
+      #select(civic,s_homlit, s_hisced, s_opdisc, s_civlrn, dictadura, s_intrust, l_attcorr, study, s_sint)
+      
+      #ggpairs(explo, mapping = aes(colour = study))
+      
+      #chile %>%
+      #  group_by(study, univ, dicta1)%>%
+      #  skimr::skim(c(civic, dictadura))
+      
+     # mydata= chile %>%
+    #    group_by(study)%>%
+    #    skimr::skim(c(civic, dictadura,dicta1, dicta2, univ))
+    #  names(mydata)
+      #View(mydata)
+      
+    #mydata %>%
+     #  filter(variable == "civic", stat %in% c("mean", "median", "sd")) %>%
+     #  ggplot(aes(x = study, y = value)) +
+    #   facet_grid(stat ~ ., scales = "free") +
+    #   geom_col()
+#iccsp= corr %>%
+#  na.omit() %>%
+#  print
+````
+
+
+## Descriptivos por año 2009-2016
+
+Recientemente un informe para América Latina del Estudio Internacional de Educación Cívica y Ciudadana - ICCS 2016, mostró que el 57% de estudiantes chilenos de 8vo básico estaría de acuerdo con apoyar “un estado dictatorial si dicho estado conlleva orden y seguridad”. Este resultado llamó la atención de diversos medios de difusuón y acádemicos que discutieron este resultado.
+
+```{r, echo=FALSE, warning=FALSE}
+## Análisis de Frecuencias: srsvy
+
+## crear un objeto con el diseño
+    #library(srvyr)
+    
+    mergesvy <-  chile %>% 
+        as_survey_design(
+        strata = jkzones, 
+        weights = totwgts, 
+        ids = jkreps, 
+        nest = TRUE)
+
+    # frequency table via taylor series linearization
+      table_freq_01 <- mergesvy %>%
+        dplyr::group_by(study, dicta1) %>%
+        summarize(proportion = survey_mean(,na.rm=TRUE))
+      #help(srvyr)
+      
+      # display table only
+      #knitr::kable(table_freq_01, digits = 4)
+      
+      df=data.frame(table_freq_01, digits=2)
+      #summary(factor(df$proportion))
+      
+      df= df %>%
+        mutate(perc = proportion * 100) %>%
+        mutate(p=round(perc, 2)) %>%
+        mutate(label=factor(dicta1, labels=c("Muy en desacuerdo", "En desacuerdo", "De acuerdo", "Muy de acuerdo"))) 
+      
+      #df <- data.frame(trt = c("a", "b", "c", "d"), outcome = c(0.136, 0.212, 0.477, 0.176), study=c(09, 09, 09, 09))
+      
+      ggplot(df, aes(label, proportion)) +
+        facet_wrap(~ study) +
+         geom_text(aes(label = p), position = position_dodge(0.3), vjust=-0.1)+
+        theme(axis.text.x = element_text(angle =45, hjust = 1)) +
+         ggtitle("Las dictaduras se justifican cuando traen orden y seguridad.") +
+        labs(x = "Categorías de respuesta", y = "%") +
+        geom_col()
+      
+      
+      #############
+      # frequency table via taylor series linearization
+      table_freq_02 <- mergesvy %>%
+        dplyr::group_by(study, dicta2) %>%
+        summarize(proportion = survey_mean(,na.rm=TRUE))
+      #help(srvyr)
+      
+      # display table only
+      #knitr::kable(table_freq_02, digits = 4)
+      
+      df2=data.frame(table_freq_02, digits=2)
+      
+      
+      mergesvy %>%
+        dplyr::group_by(study, dicta2) %>%
+        summarize(proportion = survey_mean(,na.rm=TRUE))
+
+      
+      df2= df2 %>%
+        mutate(perc = proportion * 100) %>%
+        mutate(p=round(perc, 2)) %>%
+        mutate(label=factor(dicta2, labels=c("Muy en desacuerdo", "En desacuerdo", "De acuerdo", "Muy de acuerdo")))
+      
+      #df <- data.frame(trt = c("a", "b", "c", "d"), outcome = c(0.136, 0.212, 0.477, 0.176), study=c(09, 09, 09, 09))
+      #
+      
+      
+      ggplot(df2, aes(label, proportion)) +
+        facet_wrap(~ study) +
+         geom_text(aes(label = p), position = position_dodge(0.3), vjust=-0.1)+
+        theme(axis.text.x = element_text(angle =45, hjust = 1)) +
+        ggtitle("Las dictaduras se justifican cuando traen beneficios económicos.") +
+        labs(x = "Categorías de respuesta", y = "%") +
+        geom_col()
+      
+    #plotly(p)
+    
+    #names(mergesvy)
+    #str(mergesvy)
+    
+    #merge= chile %>%
+    #  na.omit()
+     
+    
+## Diferencias Autoritarismo de Gobierno
+    #res=chile %>%
+    # p= group_by(country, study) %>% 
+    #  do(model = lmer(dictadura ~ 1 + (1 | idschool),weights=totwgts, data = .))
+    
+   # ggplotly(p)
+    
+    #res %>%
+    #  tidy(model)
+    
+    #mod=res %>%
+    #  tidy(model)%>%
+    #  filter(group=="fixed")
+    
+    #ggplot(mod, aes(estimate, reorder(country, estimate), color = (study))) +
+    #  geom_point(size = 2)+
+    #  labs(x = 'Intercepto Apoyo Dictaduta', y = 'País')+
+    #geom_errorbarh(aes(xmin = estimate - std.error, xmax = estimate + std.error), alpha=1/2)
+    #
+    #
+    #
+    
+
+    
+````
+
+
+
+## Asociación entre el nivel educacional de la familia y Apoyo a la dictadura: 2009 y 2016.
+
+```{r , eval=TRUE, results='markup', echo=TRUE, warning=FALSE, message=FALSE, error=FALSE}
+
+    #ggpairs(chile, mapping = aes(colour = study))
+    
+    chilena = chile %>%
+      na.omit() 
+
+    #ggplot(chilena, aes(x= factor(dicta1))) +
+    #  facet_wrap(~ study) +
+      #geom_bar(aes(weight = totwgts), na.rm = FALSE) +
+    #  geom_bar(aes(y = (..count..)/sum(..count..))) 
+ 
+        ## version 3.0.9
+        # scale_y_continuous(labels = percent_format())
+        ## version 3.1.0
+        # scale_y_continuous(labels=percent)
+
+    
+    
+    scatter <- ggplot(chilena, aes(factor(s_hisced), dictadura)) 
+    scatter + 
+      #geom_jitter()+
+      geom_boxplot(aes(colour = study), fill="gray")+
+      stat_summary(fun.y=mean, geom="point", shape=7, size=1)+
+    theme_classic()+
+    facet_wrap(~ study) +
+    labs(x = "Nivel educacional de la familia", y = "Apoyo a dictaduras", colour = "Año de Estudio") 
+    
+    
+    
+    line <- ggplot(chilena,  aes(factor(s_hisced), dictadura))
+    line + stat_summary(fun.y = mean, geom = "point") +
+      stat_summary(fun.data = mean_cl_boot, geom = "errorbar", width = 0.2) +
+      labs(x = "Educación Parental", y = "Justificación de dictaduras") +
+      ggtitle("Justificación de las dictaduras si traen orden, seguridad \n y/o beneficios ecónomicos, según el nivl educacional de la familia de origen \n") +
+      stat_summary(fun.y = mean, geom = "line", aes(group=1),colour = "Red", linetype = "dashed") +
+      facet_wrap(~ study)
+
+
+````
+
+
+## Asociación entre Concimiento cívico y Apoyo a la dictadura: 2009 y 2016.
+
+Al cruzar la pregunta sobre dictadura/democracia con el nivel de conocimiento cívico, se observa que aquellos estudiantes apoyarían una dictadura obtienen 464 puntos de conocimiento cívico, mientras que aquellos estudiantes que no apoyarían una dictadura obtienen 522 puntos (en promedio). Es decir, estudiantes que logran una mejor comprensión del sistema político tienden a estar más en desacuerdo con apoyar la dictadura si esta conlleva orden y seguridad.
+
+```{r , eval=TRUE, results='markup', echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+
+    #ggpairs(chile, mapping = aes(colour = study))
+    
+    chilena = chile %>%
+      na.omit()
+
+    #ggplot(chilena, aes(x= factor(dicta1))) +
+    #  facet_wrap(~ study) +
+      #geom_bar(aes(weight = totwgts), na.rm = FALSE) +
+    #  geom_bar(aes(y = (..count..)/sum(..count..))) 
+ 
+        ## version 3.0.9
+        # scale_y_continuous(labels = percent_format())
+        ## version 3.1.0
+        # scale_y_continuous(labels=percent)
+
+    
+    
+    scatter <- ggplot(chilena, aes(civic, dictadura, colour = factor(univ)))
+      scatter + geom_smooth(method = "lm", alpha = 0.1) + 
+      facet_wrap(~ study) +
+      labs(x = "Conocimiento cívico", y = "Apoyo a dictaduras", colour= "Nivel educacional de la familia") 
+      
+      
+    #scatter <- ggplot(chilena, aes(is3g10a, dictadura))
+    #  scatter + geom_smooth(method = "lm", alpha = 0.1) + 
+    #  facet_wrap(~ study) +
+    #  labs(x = "Interés en temas políticos y sociales", y = "Apoyo a dictaduras") 
+````
+
+## Como seguir...
+
+Si bien sigue siendo preocupante el bajo apoyo a la democracia en estudiantes, observamos también algunas leves mejoras vinculadas a lo que los alumnos aprenden, lo que probablemente se relaciona a los esfuerzos de distintos actores del sistema educativo en reforzar la formación ciudadana de los alumnos. La implementación de la nueva ley de formación ciudadana es algo que esperamos contribuya en esta senda y podamos ver mejores resultados en próximas evaluaciones. 
+
+```{r , eval=TRUE, results='asis', echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+
+    modelfull= lmer(dictadura ~ study  + univ + civic + (1 | idschool), weights=totwgts, data=chile)
+    
+    modelint= lmer(dictadura ~ study  + univ + civic + univ*civic + (1 | idschool), weights=totwgts, data=chile)
+    
+    #modelcivic= lmer(civic ~  s_gender + s_age + univ + s_homlit + s_opdisc + s_civlrn + s_abuse + s_schpart + c_bulsch + c_comcri + t_civclas + (1 | idschool), weights=totwgts, data=la16)
+    #summary(modelcivic)
+    #names(la16)
+
+    #summary(modelint)
+    htmlreg(c(modelfull, modelint))
+````
+
+## Respresentación de la interacción
+
+```{r, eval=FALSE, echo=FALSE}
+#----Graficar la interacción
+s_civotro = -0.00189 + 0*-0.001083
+s_civuni = -0.00189 + 1*-0.001083
+
+i_civotro = 3.66 + 0*0.453
+i_civuni = 3.66 + 1*0.453
+
+
+x0 <‐ mergeiccs$civic
+x0=as.numeric(x0)
+
+ed.esp <‐ data.frame(x0 = x0)
+ed.esp$y0 <‐ i_civuni + ed.esp$x0 * s_civuni 
+ed.esp$type <‐ ("Universitario")
+
+
+
+ed.otro <‐ data.frame(x0 = x0)
+ed.otro$y0 <‐ i_civotro + ed.otro$x0*s_civotro
+ed.otro$type <‐ ("Otro")
+
+
+## Create final data frame
+df.ed <‐ rbind(ed.esp, ed.otro)
+df.ed$type <‐ factor(df.ed$type)
+levels(df.ed$type)
+
+skimr::skim(df.ed)
+
+ed= ggplot (df.ed, aes(x = x0, y = y0) ) +
+  xlim(xmin=100,xmax=800)+
+  ylim(xmin=1,xmax=4)+
+  labs(y= "Apoyo a Dictaduras", x="Conocimiento cívico")+ geom_line(aes(colour = type, linetype = type), size=1.5) +
+  #geom_jitter(data, aes(x = x, y = y), size = 3, alpha = 0. 7) +
+  theme_bw() +
+  theme(panel.background = element_rect(fill="white") ) +
+  theme(legend.key = element_blank() ) +
+  theme(text = element_text(size = 14, face="bold")) +
+  scale_colour_manual(name = "Efectos parciales",
+                      labels= c ("Sin Ed. Univ. ***","Ed. Univ. ***") ,
+                      values = c ("#E41A1C", "#575757"))+
+  scale_linetype_manual(name = "Efectos parciales",
+                        labels= c ("Sin Ed. Univ. ***","Ed. Univ. ***"),
+                        values = c ("solid", "longdash"))
+print(ed)
+````
+
+
+
+---
